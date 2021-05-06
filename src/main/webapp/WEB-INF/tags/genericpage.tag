@@ -23,52 +23,85 @@
         This header is inspired by this bootstrap
         example: https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
-<header class="container d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">
-    <div class="h5 my-0 me-md-auto fw-normal">
-        <%--<p style="font-size: larger">
-            <jsp:invoke fragment="header"/>
-        </p>--%>
-    </div>
-    <nav class="my-2 my-md-0 me-md-3">
-        <div class="col-2">
+<%--<header class="container d-flex flex-column flex-md-row align-items-center p-3 pb-0 px-md-4 mb-4 bg-white border-bottom shadow-sm">--%>
+    <%--<nav class="my-2 my-md-0 me-md-3">
+        <div class="container">
             <a href="${pageContext.request.contextPath}/fc/index">
                 <img src="${pageContext.request.contextPath}/resources/fog-logo1.svg">
             </a>
         </div>
-        <div class="col-10">
+        <div class=""
+
+
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark" href="<%=request.getContextPath()%>">Hjem</a>
             </c:if>
             <a class="p-2 text-dark" href="#">Orders</a>
             <a class="p-2 text-dark" href="#">Profile</a>
             <a class="p-2 text-dark" href="#">About</a>
-        </div>
-    </nav>
+    </nav>--%>
+    <div class="container">
+        <nav class="nav navbar-expand-lg navbar-light bg-light pt-">
+            <div class="col-10">
+                <ul class="navbar-nav">
+                    <li>
+                        <div class="container">
+                            <a class="navbar-brand" href="${pageContext.request.contextPath}/fc/index">
+                                <img src="${pageContext.request.contextPath}/resources/fog-logo1.svg" width="50" height="50" class="d-inline-block align-text-top">
+                            </a>
+                        </div>
+                    </li>
+                    <li class="nav-item pt-1">
+                        <a class="nav-link" href="#">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="nav-item pt-1">
+                        <a class="nav-link" href="#">
+                            Profile
+                        </a>
+                    </li>
+                    <li class="nav-item pt-1">
+                        <a class="nav-link" href="#">
+                            About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-2 pt">
+                <ul class="navbar-nav">
+                    <c:if test="${sessionScope.user != null }">
+                        ${sessionScope.user.email}
+                    </c:if>
 
-    <div>
+                    <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
+                    <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
+                    <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
 
-        <c:if test="${sessionScope.user != null }">
-            ${sessionScope.user.email}
-        </c:if>
-
-        <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
-        <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
-        <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
-
-        <c:if test="${isNotLoginPage && isNotRegisterPage}">
-            <c:if test="${sessionScope.user != null }">
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
-            </c:if>
-            <c:if test="${sessionScope.user == null }">
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
-                <a type="button" class="btn btn-sm  btn-outline-secondary"
-                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
-            </c:if>
+                    <c:if test="${isNotLoginPage && isNotRegisterPage}">
+                        <c:if test="${sessionScope.user != null }">
+                            <li class="nav-item pe-4 pt-2">
+                                <a type="button" class="btn btn-sm  btn-outline-primary"
+                                   href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
+                            </li>
+                        </c:if>
+                        <c:if test="${sessionScope.user == null }">
+                            <li class="nav-item pe-4 pt-2">
+                                <a type="button" class="btn btn-sm  btn-outline-primary"
+                                   href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
+                            </li>
+                            <li class="nav-item pt-2">
+                                <a type="button" class="btn btn-sm  btn-outline-primary"
+                                   href="${pageContext.request.contextPath}/fc/registerpage">Sign up</a>
+                            </li>
+                        </c:if>
+                    </c:if>
+                </ul>
+            </div>
+        </nav>
     </div>
-    </c:if>
-</header>
+
+<%--</header>--%>
 
 <div id="body" class="container" style="min-height: 20vh;">
     <jsp:doBody/>
