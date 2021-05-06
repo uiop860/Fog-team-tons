@@ -22,7 +22,7 @@
 <body class="container">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="${pageContext.request.contextPath}/fc/index">
                 <img src="${pageContext.request.contextPath}/resources/fog-logo1.svg" width="55" height="55" class="d-inline-block align-text-top">
             </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
