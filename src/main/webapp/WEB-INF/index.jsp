@@ -26,7 +26,7 @@
             </h5>
         </div>
         <div class="pb-3 text-left">
-        <a href="${pageContext.request.contextPath}/fc/loginpage" class="btn btn-lg btn-block btn-primary">Find din carport<a>
+        <a href="${pageContext.request.contextPath}/fc/orderpage" class="btn btn-lg btn-block btn-primary">Find din carport<a>
         <div>
     </jsp:body>
 </t:genericpage>

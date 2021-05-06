@@ -25,8 +25,4 @@
 
     </jsp:body>
 
-    <jsp:attribute name="footer">
-        <c:set var="addHomeLink" value="${false}" scope="request"/>
-    </jsp:attribute>
-
 </t:genericpage>
