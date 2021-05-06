@@ -13,27 +13,20 @@
     </jsp:attribute>
 
     <jsp:body>
-
-        <div>
-            <h2>Our Cool Site</h2>
-
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+            <div>
+                    <h1 class="pb-3 text-center">Skræddersyet carport</h1>
             </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
-
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
-
+        <div>
+            <h5 class="pb-3">
+                Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
+                <br><br>
+                Tilbud og skitsetegning fremsendes med post hurtigst muligt.
+                <br><br>
+                Ved bestilling medfølger standardbyggevejledning.
+            </h5>
         </div>
-
+        <div class="pb-3 text-left">
+        <a href="${pageContext.request.contextPath}/fc/loginpage" class="btn btn-lg btn-block btn-primary">Find din carport<a>
+        <div>
     </jsp:body>
 </t:genericpage>
