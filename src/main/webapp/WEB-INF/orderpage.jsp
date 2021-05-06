@@ -17,8 +17,8 @@
                     <h1 class="pb-3 text-center">Skræddersyet carport</h1>
             </div>
         <div class="row">
-            <div class="col-sm-2"></div>
-            <div class="col-sm-8">
+            <div class="col-sm-3"></div>
+            <div class="col-sm-6">
         <form method="post" action="${pageContext.request.contextPath}/fc/finishpage" class="align-content-center">
 
 
@@ -41,7 +41,7 @@
             <button type="submit" class="btn btn-lg btn-block btn-primary" name="carportRequest" value="${sessionScope.user.id}">Send Forspørgsel</button>
         </form>
             </div>
-            <div class="col-sm-2"></div>
+            <div class="col-sm-3"></div>
         </div>
 
     </jsp:body>
