@@ -14,9 +14,9 @@ public class OrderFacade {
         this.orderMapper = new OrderMapper(database);
     }
 
-    private void insertOrderIntoDB(Address address, int length, int width, User user) throws UserException {
+    public void insertOrderIntoDB(Address address, int height, int width, User user) throws UserException {
 
-        orderMapper.insertOrderIntoDB(address,length,width, user);
+        orderMapper.insertOrderIntoDB(address, height, width, user);
 
     }
 }

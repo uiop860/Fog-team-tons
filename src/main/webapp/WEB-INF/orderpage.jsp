@@ -26,12 +26,12 @@
                         <h4 class="pb-3 text-center">Vælg længde og bredde på carport</h4>
                         Vælg bredde på carport
                         <select class="form-select" name="width" id="width">
-                            <option value="PLACEHOLDER">1234</option>
+                            <option value="1234">1234</option>
                         </select>
                         <br>
                         Vælg længde på carport
                         <select class="form-select " name="height" id="height">
-                            <option value="PLACEHOLDER">1234</option>
+                            <option value="1234">1234</option>
                         </select>
                         <br><br>
 
@@ -40,41 +40,41 @@
                         <div class="d-flex ">
                             <div class="p-2 flex-fill">
                                 <label for="name">Navn</label><br>
-                                <input class ="form-control" type="text" id="name" name="name" placeholder="Indtast dit navn" value="asd">
+                                <input class ="form-control" type="text" id="name" name="name" placeholder="Indtast dit navn" value="">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 w-100">
-                                <label for="address">Adresse</label><br>
-                                <input class ="form-control w-100" id="address" type="text" name="address" value="123" placeholder="Indtast adresse">
+                                <label for="road">Adresse</label><br>
+                                <input class ="form-control w-100" id="road" type="text" name="road" value="" placeholder="Indtast adresse">
                             </div>
                             <div class="p-2 align-items-end w-25">
                                 <label  for="housenumber">Hus nr.</label><br>
-                                <input class ="form-control w-100" id="housenumber" type="text" name="housenumber" value="123">
+                                <input class ="form-control w-100" id="housenumber" type="text" name="housenumber" value="">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 align-items-start w-50">
                                 <label for="zipcode">Postnummer</label><br>
-                                <input class ="form-control w-100" id="zipcode" type="text" name="zipcode" value="123"
+                                <input class ="form-control w-100" id="zipcode" type="text" name="zipcode" value=""
                                        placeholder="Indtast postnummer">
                             </div>
                             <div class="p-2 w-100">
-                                <label  for="By">By</label><br>
-                                <input class ="form-control w-100" id="By" type="text" name="By" value="123" placeholder="Indtast by">
+                                <label  for="city">By</label><br>
+                                <input class ="form-control w-100" id="city" type="text" name="city" value="" placeholder="Indtast by">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 flex-fill">
                                 <label for="phone">Telefon</label><br>
-                                <input class ="form-control" id="phone" type="text" name="phone" value="123"
+                                <input class ="form-control" id="phone" type="text" name="phone" value=""
                                        placeholder="Indtast gyldigt telefonnummer">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 flex-fill">
                                 <label for="email">Email</label><br>
-                                <input class ="form-control" id="email" type="text" name="email" value="123"
+                                <input class ="form-control" id="email" type="text" name="email" value=""
                                        placeholder="Indtast gyldig mailadresse">
                             </div>
                         </div>

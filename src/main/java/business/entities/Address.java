@@ -6,8 +6,13 @@ public class Address {
     private int houseNumber;
     private String city;
     private int zipCode;
-    private String country;
 
+    public Address(String road, int houseNumber, String city, int zipCode) {
+        this.road = road;
+        this.houseNumber = houseNumber;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
 
     /** getters and setters **/
 
@@ -41,13 +46,5 @@ public class Address {
 
     public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 }
