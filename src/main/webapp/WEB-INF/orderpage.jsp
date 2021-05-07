@@ -13,36 +13,79 @@
     </jsp:attribute>
 
     <jsp:body>
-            <div>
-                    <h1 class="pb-3 text-center">Skræddersyet carport</h1>
-            </div>
-        <div class="row">
-            <div class="col-sm-3"></div>
-            <div class="col-sm-6">
-        <form method="post" action="${pageContext.request.contextPath}/fc/finishpage" class="align-content-center">
-
-
-            <div class="pb-3">
-                <h4 class="pb-3 text-center">Vælg længde og bredde på carport</h4>
-                <br><br>
-                Vælg bredde på carport
-                <select class="form-select" name="width" id="width">
-                        <option value="123">1234</option>
-                </select>
-                <br>
-                Vælg længde på carport
-                <select class="form-select " name="height" id="height">
-                    <option value="123">1234</option>
-                </select>
-                <br><br>
-            <h4 class="pb-3 text-center">Kontaktinformation</h4>
-            </div>
-
-            <button type="submit" class="btn btn-lg btn-block btn-primary" name="carportRequest" value="${sessionScope.user.id}">Send Forspørgsel</button>
-        </form>
-            </div>
-            <div class="col-sm-3"></div>
+        <div>
+            <h1 class="pb-3 text-center">Skræddersyet carport</h1>
+            <br>
         </div>
+        <form method="post" action="${pageContext.request.contextPath}/fc/finishpage" class="align-content-center">
+            <div class="row">
+                <div class="col-sm-3"></div>
+                <div class="col-sm-6">
 
+                    <div class="pb-3">
+                        <h4 class="pb-3 text-center">Vælg længde og bredde på carport</h4>
+                        Vælg bredde på carport
+                        <select class="form-select" name="width" id="width">
+                            <option value="PLACEHOLDER">1234</option>
+                        </select>
+                        <br>
+                        Vælg længde på carport
+                        <select class="form-select " name="height" id="height">
+                            <option value="PLACEHOLDER">1234</option>
+                        </select>
+                        <br><br>
+
+                        <h4 class="pb-3 text-center">Kontaktinformation</h4>
+
+                        <div class="d-flex ">
+                            <div class="p-2 flex-fill">
+                                <label for="name">Navn</label><br>
+                                <input class ="form-control" type="text" id="name" name="name" placeholder="Indtast dit navn" value="asd">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="p-2 w-100">
+                                <label for="address">Adresse</label><br>
+                                <input class ="form-control w-100" id="address" type="text" name="address" value="123" placeholder="Indtast adresse">
+                            </div>
+                            <div class="p-2 align-items-end w-25">
+                                <label  for="housenumber">Hus nr.</label><br>
+                                <input class ="form-control w-100" id="housenumber" type="text" name="housenumber" value="123">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="p-2 align-items-start w-50">
+                                <label for="zipcode">Postnummer</label><br>
+                                <input class ="form-control w-100" id="zipcode" type="text" name="zipcode" value="123"
+                                       placeholder="Indtast postnummer">
+                            </div>
+                            <div class="p-2 w-100">
+                                <label  for="By">By</label><br>
+                                <input class ="form-control w-100" id="By" type="text" name="By" value="123" placeholder="Indtast by">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="p-2 flex-fill">
+                                <label for="phone">Telefon</label><br>
+                                <input class ="form-control" id="phone" type="text" name="phone" value="123"
+                                       placeholder="Indtast gyldigt telefonnummer">
+                            </div>
+                        </div>
+                        <div class="d-flex">
+                            <div class="p-2 flex-fill">
+                                <label for="email">Email</label><br>
+                                <input class ="form-control" id="email" type="text" name="email" value="123"
+                                       placeholder="Indtast gyldig mailadresse">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-lg btn-block btn-primary" name="carportRequest"
+                                value="${sessionScope.user.id}">Send Forspørgsel
+                        </button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                </div>
+            </div>
+        </form>
     </jsp:body>
 </t:genericpage>
