@@ -42,6 +42,10 @@
                     ${sessionScope.user.email}
                 </c:if>
 
+                <c:if test="${sessionScope.role == 'admin'}">
+                    <a type="button" class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/fc/adminpage">admin side</a>
+                </c:if>
+
                 <c:if test="${sessionScope.role == 'employee'}">
                     <a type="button" class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/fc/employee">Medarbejder side</a>
                 </c:if>
