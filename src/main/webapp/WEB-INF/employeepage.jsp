@@ -33,7 +33,6 @@
                         </li>
                         <li class="list-group-item">
                             <div class="row g-0">
-
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <h6 class="card-title">Lorem ipsum dolor sit amet...</h6>
@@ -66,8 +65,8 @@
                     <div class="card-header bg-primary">
                         <h2 class="text-light pt-2">Forespørgsler</h2>
                     </div>
-                    <div class="stats py-3 px-4">
-                        <table class="table">
+                    <div class="stats py-3 px-4 table-responsive">
+                        <table class="table ">
                             <thead>
                             <th scope="col">Id</th>
                             <th scope="col">Bredde</th>
@@ -86,6 +85,7 @@
                                     <td>${fsp.address}</td>
                                     <td>${fsp.phone}</td>
                                     <td>${fsp.email}</td>
+                                    <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
                                 </tr>
                             </c:forEach>
                         </table>

@@ -30,33 +30,40 @@
                     <a class="nav-link" href="#">Bestilling</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="#">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Fisk</a>
                 </li>
             </ul>
-            <div class="d-flex">
+            <div>
+
                 <c:if test="${sessionScope.user != null }">
                     ${sessionScope.user.email}
                 </c:if>
+
                 <c:if test="${sessionScope.role == 'employee'}">
                     <a type="button" class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/fc/employee">Medarbejder side</a>
                 </c:if>
+
                 <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
                 <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
                 <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
+
                 <c:if test="${isNotLoginPage && isNotRegisterPage}">
+
                     <c:if test="${sessionScope.user != null }">
                             <a type="button" class="btn btn-sm  btn-outline-primary"
-                               href="${pageContext.request.contextPath}/fc/logoutcommand">Logout</a>
+                               href="${pageContext.request.contextPath}/fc/logoutcommand">Log ud</a>
                     </c:if>
+
                     <c:if test="${sessionScope.user == null }">
                             <a type="button" class="btn btn-sm  btn-outline-primary"
-                               href="${pageContext.request.contextPath}/fc/loginpage">Login</a>
+                               href="${pageContext.request.contextPath}/fc/loginpage">Log ind</a>
                             <a type="button" class="btn btn-sm  btn-outline-primary ms-2 "
-                               href="${pageContext.request.contextPath}/fc/registerpage">Signup</a>
+                               href="${pageContext.request.contextPath}/fc/registerpage">Register</a>
                     </c:if>
+
                 </c:if>
             </div>
         </div>
