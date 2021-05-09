@@ -63,7 +63,7 @@ public class FinishCommand extends Command
         } else{
             user = sessionUser;
         }
-        
+
 
         fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
 
