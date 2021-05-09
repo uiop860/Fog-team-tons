@@ -14,19 +14,19 @@
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="email">Email</label>
                     <div class="col-sm-4">
-                        <input id="email" class="form-control" type="text" name="email" value="${param.email}" placeholder="Enter a valid email">
+                        <input id="email" class="form-control" type="email" name="email" value="${param.email}" placeholder="Mogens@gmail.com">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password1">Password</label>
+                    <label class="col-sm-1 col-form-label" for="password1">Kodeord</label>
                     <div class="col-sm-4">
-                        <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter your password">
+                        <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Indtast kodeord">
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password2">Password</label>
+                    <label class="col-sm-1 col-form-label" for="password2">Kodeord</label>
                     <div class="col-sm-4">
-                        <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Repeat the password">
+                        <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Gentag kodeord">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -38,7 +38,7 @@
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="phone">Telefon</label>
                     <div class="col-sm-4">
-                        <input id="phone" class="form-control" type="number" name="phone" value="${param.phone}"  placeholder="12344556">
+                        <input id="phone" class="form-control" type="tel" name="phone" value="${param.phone}" placeholder="12345678">
                     </div>
                 </div>
                 <div class="row mb-3">
@@ -47,8 +47,28 @@
                         <input id="road" class="form-control" type="text" name="road" value="${param.road}"  placeholder="Vesterbrogade">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="house">Hus nr.</label>
+                    <div class="col-sm-4">
+                        <input id="house" class="form-control" type="number" name="house" value="${param.house}" placeholder="19">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="zipcode">Post nr.</label>
+                    <div class="col-sm-4">
+                        <input id="zipcode" class="form-control" type="number" name="zipcode" value="${param.zipcode}" placeholder="4260">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="city">By</label>
+                    <div class="col-sm-4">
+                        <input id="city" class="form-control" type="text" name="city" value="${param.city}"  placeholder="Odense">
+                        <div class="pt-3"><button type="submit" class="btn btn-primary btn-lg btn-block w-100" name="Opret" value="submit">Opret bruger</button></div>
 
-                <input class="btn btn-primary" type="submit" type="submit" value="Submit">
+                    </div>
+                </div>
+
+<%--                <input class="btn btn-primary" type="submit" value="Submit">--%>
             </form>
 
             <c:if test="${requestScope.error != null }">
