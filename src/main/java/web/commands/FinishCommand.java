@@ -18,18 +18,32 @@ public class FinishCommand extends Command
     }
 
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-
+        int width;
+        int height;
+        String name;
+        String road;
+        int houseNumber;
+        int zipCode;
+        String city;
+        String phone;
+        String email;
         OrderFacade orderFacade = new OrderFacade(database);
 
-        int width = Integer.parseInt(request.getParameter("width"));
-        int height = Integer.parseInt(request.getParameter("height"));
-        String name = request.getParameter("name");
-        String road = request.getParameter("road");
-        int houseNumber = Integer.parseInt(request.getParameter("housenumber"));
-        int zipCode = Integer.parseInt(request.getParameter("zipcode"));
-        String city = request.getParameter("city");
-        String phone = request.getParameter("phone");
-        String email = request.getParameter("email");
+        try{
+            width = Integer.parseInt(request.getParameter("width"));
+            height = Integer.parseInt(request.getParameter("height"));
+            name = request.getParameter("name");
+            road = request.getParameter("road");
+            houseNumber = Integer.parseInt(request.getParameter("housenumber"));
+            zipCode = Integer.parseInt(request.getParameter("zipcode"));
+            city = request.getParameter("city");
+            phone = request.getParameter("phone");
+            email = request.getParameter("email");
+
+        } catch (NumberFormatException e){
+            request.setAttribute("error","Du har udfyldt forkert");
+            return "orderpage";
+        }
 
         User sessionUser = (User) request.getSession().getAttribute("user");
 

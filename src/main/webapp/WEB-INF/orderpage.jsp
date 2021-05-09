@@ -21,7 +21,6 @@
             <div class="row">
                 <div class="col-sm-3"></div>
                 <div class="col-sm-6">
-
                     <div class="pb-3">
                         <h4 class="pb-3 text-center">Vælg længde og bredde på carport</h4>
                         Vælg bredde på carport
@@ -87,7 +86,7 @@
                             </div>
                             <div class="p-2 align-items-end w-25">
                                 <label  for="housenumber">Hus nr.</label><br>
-                                <input class ="form-control w-100" id="housenumber" type="text" name="housenumber" value="">
+                                <input class ="form-control w-100" id="housenumber" type="number" name="housenumber" value="">
                             </div>
                         </div>
                         <div class="d-flex">
@@ -104,7 +103,7 @@
                         <div class="d-flex">
                             <div class="p-2 flex-fill">
                                 <label for="phone">Telefon</label><br>
-                                <input class ="form-control" id="phone" type="text" name="phone" value=""
+                                <input class ="form-control" id="phone" type="number" name="phone" value=""
                                        placeholder="Indtast gyldigt telefonnummer">
                             </div>
                         </div>
@@ -115,6 +114,14 @@
                                        placeholder="Indtast gyldig mailadresse">
                             </div>
                         </div>
+
+                        <c:if test="${requestScope.error != null}">
+                            <div class="d-flex">
+                                <div class="p-2 flex-fill">
+                                    <p style="color:red">${requestScope.error}</p>
+                                </div>
+                            </div>
+                        </c:if>
                         <div class="p-2">
                             <button type="submit" class="btn btn-lg btn-block btn-primary" name="carportRequest"
                                     value="${sessionScope.user.id}">Send Forspørgsel
