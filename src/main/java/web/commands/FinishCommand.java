@@ -50,7 +50,7 @@ public class FinishCommand extends Command
 //        } else{
 //            user = sessionUser;
 //        }
-        fspFacade.createFSp(width, height, name, road, houseNumber, zipCode, city, phone, email);
+        fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
 //        Address address = new Address(road,houseNumber,city,zipCode);
 //        orderFacade.insertOrderIntoDB(address,height,width,user);
 

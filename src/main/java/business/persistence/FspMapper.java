@@ -75,7 +75,8 @@ public class FspMapper
                     String email = rs.getString("email");
 
 
-                    fspList.add(new Fsp(width, height, name, address, housenr, zipcode, city, phone, email));
+                    fspList.add(new Fsp(id, width, height, name, address, housenr, zipcode, city, phone, email));
+
 
                 }
                 return fspList;

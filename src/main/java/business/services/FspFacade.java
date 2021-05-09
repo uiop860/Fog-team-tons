@@ -16,9 +16,9 @@ public class FspFacade
         this.fspMapper = new FspMapper(database);
     }
 
-    public Fsp createFSp(int width, int height, String name, String road, int houseNumber, int zipCode, String city, int phone, String email) throws UserException
+    public Fsp createFSp(int id, int width, int height, String name, String road, int houseNumber, int zipCode, String city, int phone, String email) throws UserException
     {
-        Fsp fsp = new Fsp(width, height, name, road, houseNumber, zipCode, city, phone, email);
+        Fsp fsp = new Fsp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
         fspMapper.createFsp(fsp);
         return fsp;
     }

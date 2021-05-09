@@ -13,8 +13,9 @@ public class Fsp
     private int phone;
     private String email;
 
-    public Fsp(int width, int length, String name, String address, int houseNr, int zipcode, String city, int phone, String email)
+    public Fsp(int id, int width, int length, String name, String address, int houseNr, int zipcode, String city, int phone, String email)
     {
+        this.id = id;
         this.width = width;
         this.length = length;
         this.name = name;
