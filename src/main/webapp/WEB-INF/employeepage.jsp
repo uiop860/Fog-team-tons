@@ -9,21 +9,18 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
-        <div class="main col-11">
+        <div class="main col-11 pt-4">
         <div class="row first-row">
         <div class="col-4">
             <section id="recently-posted">
                 <div class="card">
-                    <div class="card-header">
-                        Recently Published Posts
+                    <div class="card-header bg-primary">
+                        <h2 class="text-light">Beskeder</h2>
                     </div>
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="row g-0">
-                                <div class="col-md-3">
-                                    <img src="./assets/post1.jpeg" alt="Post One Photo" class="img-fluid rounded-lg">
-                                </div>
+
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <h6 class="card-title">Lorem ipsum dolor sit amet...</h6>
@@ -36,9 +33,7 @@
                         </li>
                         <li class="list-group-item">
                             <div class="row g-0">
-                                <div class="col-md-3">
-                                    <img src="./assets/post1.jpeg" alt="Post One Photo" class="img-fluid rounded-lg">
-                                </div>
+
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <h6 class="card-title">Lorem ipsum dolor sit amet...</h6>
@@ -51,9 +46,6 @@
                         </li>
                         <li class="list-group-item">
                             <div class="row g-0">
-                                <div class="col-md-3">
-                                    <img src="./assets/post1.jpeg" alt="Post One Photo" class="img-fluid rounded-lg">
-                                </div>
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <h6 class="card-title">Lorem ipsum dolor sit amet...</h6>
