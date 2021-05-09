@@ -9,7 +9,7 @@
     <jsp:attribute name="footer">
     </jsp:attribute>
     <jsp:body>
-        <div class="main col-11 pt-4">
+        <div class="main col-12 pt-4">
         <div class="row first-row">
         <div class="col-4">
             <section id="recently-posted">
@@ -63,7 +63,7 @@
             <section id="Forespørgsler">
                 <div class="card">
                     <div class="card-header bg-primary">
-                        <h2 class="text-light pt-2">Forespørgsler</h2>
+                        <h2 class="text-light">Forespørgsler</h2>
                     </div>
                     <div class="stats py-3 px-4 table-responsive">
                         <table class="table ">

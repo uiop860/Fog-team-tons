@@ -29,6 +29,24 @@
                         <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Repeat the password">
                     </div>
                 </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="name">Navn</label>
+                    <div class="col-sm-4">
+                        <input id="name" class="form-control" type="text" name="name" value="${param.name}"  placeholder="Mogens Jørgensen">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="phone">Telefon</label>
+                    <div class="col-sm-4">
+                        <input id="phone" class="form-control" type="number" name="phone" value="${param.phone}"  placeholder="12344556">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label class="col-sm-1 col-form-label" for="road">Vej</label>
+                    <div class="col-sm-4">
+                        <input id="road" class="form-control" type="text" name="road" value="${param.road}"  placeholder="Vesterbrogade">
+                    </div>
+                </div>
 
                 <input class="btn btn-primary" type="submit" type="submit" value="Submit">
             </form>
