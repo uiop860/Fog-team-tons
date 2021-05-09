@@ -37,19 +37,19 @@ public class FinishCommand extends Command
         int phone = Integer.parseInt(request.getParameter("phone"));
         String email = request.getParameter("email");
 
-//        User sessionUser = (User) request.getSession().getAttribute("user");
+        User sessionUser = (User) request.getSession().getAttribute("user");
 
 //        List<Fsp> fspList = new ArrayList<>();
 //        fspList.add(new Fsp(width, height, name, road, houseNumber, zipCode, city, phone, email));
 
-//        User user;
-//        if(sessionUser == null){
-//            user = new User(email,null,"customer");
-//            user.setName(name);
-//            user.setPhone(phone);
-//        } else{
-//            user = sessionUser;
-//        }
+        User user;
+        if(sessionUser == null){
+            user = new User(email,null,"customer");
+            user.setName(name);
+            user.setPhone(phone);
+        } else{
+            user = sessionUser;
+        }
         fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
 //        Address address = new Address(road,houseNumber,city,zipCode);
 //        orderFacade.insertOrderIntoDB(address,height,width,user);

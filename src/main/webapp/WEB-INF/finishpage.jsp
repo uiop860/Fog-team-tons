@@ -20,7 +20,7 @@
         </div>
 
         <div>
-            <img src="img.png" alt="Smiley">
+            <img src="${pageContext.request.contextPath}/resources/img.png" alt="Smiley">
         </div>
 
     </jsp:body>
