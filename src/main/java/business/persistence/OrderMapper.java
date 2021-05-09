@@ -17,7 +17,7 @@ public class OrderMapper {
 
         try(Connection connection = database.connect()){
 
-            String sql = "INSERT INTO fog_db.user(email,role,name,phone,road,housenumber,city,zipcode)" +
+            String sql = "INSERT INTO fog_db.users(email,role,name,phone,road,housenumber,city,zipcode)" +
                          "VALUES(?,?,?,?,?,?,?,?);";
 
             try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
@@ -25,7 +25,7 @@ public class OrderMapper {
                 ps.setString(1,user.getEmail());
                 ps.setString(2,user.getRole());
                 ps.setString(3,user.getName());
-                ps.setString(4,user.getPhone());
+                ps.setInt(4,user.getPhone());
                 ps.setString(5,address.getRoad());
                 ps.setInt(6,address.getHouseNumber());
                 ps.setString(7,address.getCity());

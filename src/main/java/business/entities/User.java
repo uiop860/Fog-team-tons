@@ -8,7 +8,7 @@ public class User
     private String password; // Should be hashed and secured
     private String role;
     private String name;
-    private String phone;
+    private int phone;
     private Address address;
 
     public User(String email, String password, String role)
@@ -29,11 +29,11 @@ public class User
         this.name = name;
     }
 
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 

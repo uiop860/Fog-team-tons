@@ -40,6 +40,9 @@
                 <c:if test="${sessionScope.user != null }">
                     ${sessionScope.user.email}
                 </c:if>
+                <c:if test="${sessionScope.role == 'employee'}">
+                    <a type="button" class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/fc/employee">Medarbejder side</a>
+                </c:if>
                 <c:set var="thisPage" value="${pageContext.request.servletPath}"/>
                 <c:set var="isNotLoginPage" value="${!fn:endsWith(thisPage,'loginpage.jsp')}"/>
                 <c:set var="isNotRegisterPage" value="${!fn:endsWith(thisPage,'registerpage.jsp')}"/>
