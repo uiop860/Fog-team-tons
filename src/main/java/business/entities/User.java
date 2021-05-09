@@ -9,7 +9,9 @@ public class User
     private String role;
     private String name;
     private int phone;
-    private Address address;
+
+    //TODO: remove
+    /* private Address address;*/
 
     public User(String email, String password, String role)
     {
@@ -37,13 +39,13 @@ public class User
         this.phone = phone;
     }
 
-    public Address getAddress() {
+/*    public Address getAddress() {
         return address;
     }
 
     public void setAddress(Address address) {
         this.address = address;
-    }
+    }*/
 
     public String getEmail()
     {

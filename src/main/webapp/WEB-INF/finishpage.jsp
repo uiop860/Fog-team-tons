@@ -9,7 +9,6 @@
     </jsp:attribute>
 
     <jsp:body>
-
         <div>
             <h2>Tak for din henvendelse!</h2>
                 Vi kontakter dig hurtigst muligt angående din personlige carport.

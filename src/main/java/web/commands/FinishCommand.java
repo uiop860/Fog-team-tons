@@ -53,8 +53,7 @@ public class FinishCommand extends Command
 
         User sessionUser = (User) request.getSession().getAttribute("user");
 
-//        List<Fsp> fspList = new ArrayList<>();
-//        fspList.add(new Fsp(width, height, name, road, houseNumber, zipCode, city, phone, email));
+
 
         User user;
         if(sessionUser == null){
@@ -64,6 +63,8 @@ public class FinishCommand extends Command
         } else{
             user = sessionUser;
         }
+        
+
         fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
 
 //        Address address = new Address(road,houseNumber,city,zipCode);
