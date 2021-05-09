@@ -71,13 +71,13 @@
         <div class="col-8">
             <section id="Forespørgsler">
                 <div class="card">
-                    <div class="card-header">
-                        Forespørgsler
+                    <div class="card-header bg-primary">
+                        <h2 class="text-light pt-2">Forespørgsler</h2>
                     </div>
                     <div class="stats py-3 px-4">
                         <table class="table">
                             <thead>
-                            <td scope="col">Id</td>
+                            <th scope="col">Id</th>
                             <th scope="col">Bredde</th>
                             <th scope="col">Længde</th>
                             <th scope="col">Navn</th>
