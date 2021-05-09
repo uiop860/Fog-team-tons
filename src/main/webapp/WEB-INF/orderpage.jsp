@@ -47,8 +47,8 @@
                         </select>
                         <br>
                         Vælg længde på carport
-                        <select class="form-select " name="height" id="height">
-                            <option selected>Vælg højde</option>
+                        <select class="form-select " name="length" id="length">
+                            <option selected>Vælg længde</option>
                             <option value="240">240</option>
                             <option value="270">270</option>
                             <option value="300">300</option>

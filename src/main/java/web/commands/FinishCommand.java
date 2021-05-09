@@ -26,7 +26,7 @@ public class FinishCommand extends Command
         FspFacade fspFacade = new FspFacade(database);
 
         int width;
-        int height;
+        int length;
         String name;
         String road;
         int houseNumber;
@@ -37,7 +37,7 @@ public class FinishCommand extends Command
 
         try{
             width = Integer.parseInt(request.getParameter("width"));
-            height = Integer.parseInt(request.getParameter("height"));
+            length = Integer.parseInt(request.getParameter("length"));
             name = request.getParameter("name");
             road = request.getParameter("road");
             houseNumber = Integer.parseInt(request.getParameter("housenumber"));
@@ -65,7 +65,7 @@ public class FinishCommand extends Command
         }
 
 
-        fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
+        fspFacade.createFSp(0, width, length, name, road, houseNumber, zipCode, city, phone, email);
 
 //        Address address = new Address(road,houseNumber,city,zipCode);
 //        orderFacade.insertOrderIntoDB(address,height,width,user);
