@@ -53,9 +53,6 @@ public class FinishCommand extends Command
 
 //        User sessionUser = (User) request.getSession().getAttribute("user");
 
-//        List<Fsp> fspList = new ArrayList<>();
-//        fspList.add(new Fsp(width, height, name, road, houseNumber, zipCode, city, phone, email));
-
 //        User user;
 //        if(sessionUser == null){
 //            user = new User(email,null,"customer");
