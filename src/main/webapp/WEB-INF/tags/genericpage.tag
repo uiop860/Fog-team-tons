@@ -61,7 +61,7 @@
                             <a type="button" class="btn btn-sm  btn-outline-primary"
                                href="${pageContext.request.contextPath}/fc/loginpage">Log ind</a>
                             <a type="button" class="btn btn-sm  btn-outline-primary ms-2 "
-                               href="${pageContext.request.contextPath}/fc/registerpage">Register</a>
+                               href="${pageContext.request.contextPath}/fc/registerpage">Opret bruger</a>
                     </c:if>
 
                 </c:if>

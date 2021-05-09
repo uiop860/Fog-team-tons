@@ -55,14 +55,14 @@ public class FinishCommand extends Command
 
 
 
-        User user;
-        if(sessionUser == null){
-            user = new User(email,null,"customer");
-            user.setName(name);
-            user.setPhone(phone);
-        } else{
-            user = sessionUser;
-        }
+//        User user;
+//        if(sessionUser == null){
+//            user = new User(email,null,"customer");
+//            user.setName(name);
+//            user.setPhone(phone);
+//        } else{
+//            user = sessionUser;
+//        }
 
 
         fspFacade.createFSp(0, width, length, name, road, houseNumber, zipCode, city, phone, email);
