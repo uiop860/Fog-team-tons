@@ -27,10 +27,10 @@
             </a>
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bestilling</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/fc/orderpage">Bestilling</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profil</a>
+                    <a class="nav-link" href="${pageContext.request.contextPath}/fc/loginpage">Profil</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Fisk</a>
@@ -40,6 +40,10 @@
 
                 <c:if test="${sessionScope.user != null }">
                     ${sessionScope.user.email}
+                </c:if>
+
+                <c:if test="${sessionScope.role == 'admin'}">
+                    <a type="button" class="btn btn-sm btn-outline-primary" href="${pageContext.request.contextPath}/fc/adminpage">admin side</a>
                 </c:if>
 
                 <c:if test="${sessionScope.role == 'employee'}">
@@ -61,7 +65,7 @@
                             <a type="button" class="btn btn-sm  btn-outline-primary"
                                href="${pageContext.request.contextPath}/fc/loginpage">Log ind</a>
                             <a type="button" class="btn btn-sm  btn-outline-primary ms-2 "
-                               href="${pageContext.request.contextPath}/fc/registerpage">Register</a>
+                               href="${pageContext.request.contextPath}/fc/registerpage">Opret bruger</a>
                     </c:if>
 
                 </c:if>

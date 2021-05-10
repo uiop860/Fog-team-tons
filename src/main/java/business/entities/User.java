@@ -7,9 +7,7 @@ public class User
     private String email;
     private String password; // Should be hashed and secured
     private String role;
-    private String name;
-    private int phone;
-    private Address address;
+
 
     public User(String email, String password, String role)
     {
@@ -19,32 +17,8 @@ public class User
     }
 
 
+
     /** getters and setters **/
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getPhone() {
-        return phone;
-    }
-
-    public void setPhone(int phone) {
-        this.phone = phone;
-    }
-
-    public Address getAddress() {
-        return address;
-    }
-
-    public void setAddress(Address address) {
-        this.address = address;
-    }
-
     public String getEmail()
     {
         return email;

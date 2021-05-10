@@ -23,24 +23,37 @@ public class FinishCommand extends Command
 
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
-//        OrderFacade orderFacade = new OrderFacade(database);
-
         FspFacade fspFacade = new FspFacade(database);
 
-        int width = Integer.parseInt(request.getParameter("width"));
-        int height = Integer.parseInt(request.getParameter("height"));
-        String name = request.getParameter("name");
-        String road = request.getParameter("road");
-        int houseNumber = Integer.parseInt(request.getParameter("housenumber"));
-        int zipCode = Integer.parseInt(request.getParameter("zipcode"));
-        String city = request.getParameter("city");
-        int phone = Integer.parseInt(request.getParameter("phone"));
-        String email = request.getParameter("email");
+        int width;
+        int length;
+        String name;
+        String road;
+        int houseNumber;
+        int zipCode;
+        String city;
+        int phone;
+        String email;
 
-//        User sessionUser = (User) request.getSession().getAttribute("user");
+        try{
+            width = Integer.parseInt(request.getParameter("width"));
+            length = Integer.parseInt(request.getParameter("length"));
+            name = request.getParameter("name");
+            road = request.getParameter("road");
+            houseNumber = Integer.parseInt(request.getParameter("housenumber"));
+            zipCode = Integer.parseInt(request.getParameter("zipcode"));
+            city = request.getParameter("city");
+            phone = Integer.parseInt(request.getParameter("phone"));
+            email = request.getParameter("email");
 
-//        List<Fsp> fspList = new ArrayList<>();
-//        fspList.add(new Fsp(width, height, name, road, houseNumber, zipCode, city, phone, email));
+        } catch (NumberFormatException e){
+            request.setAttribute("error","Du har udfyldt forkert");
+            return "orderpage";
+        }
+
+        User sessionUser = (User) request.getSession().getAttribute("user");
+
+
 
 //        User user;
 //        if(sessionUser == null){
@@ -50,7 +63,10 @@ public class FinishCommand extends Command
 //        } else{
 //            user = sessionUser;
 //        }
-        fspFacade.createFSp(0, width, height, name, road, houseNumber, zipCode, city, phone, email);
+
+
+        fspFacade.createFSp(0, width, length, name, road, houseNumber, zipCode, city, phone, email);
+
 //        Address address = new Address(road,houseNumber,city,zipCode);
 //        orderFacade.insertOrderIntoDB(address,height,width,user);
 

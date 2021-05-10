@@ -4,7 +4,7 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Demo Page for Employee Roles
+         Demo Page for admins
     </jsp:attribute>
     <jsp:attribute name="footer">
     </jsp:attribute>
