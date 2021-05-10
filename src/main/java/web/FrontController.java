@@ -99,5 +99,4 @@ public class FrontController extends HttpServlet
     {
         return "FrontController for application";
     }
-
 }
