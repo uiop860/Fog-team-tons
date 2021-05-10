@@ -11,7 +11,7 @@
     <jsp:body>
         <div class="main col-12 pt-4">
         <div class="row first-row">
-        <div class="col-4">
+        <div class="col-3">
             <section id="recently-posted">
                 <div class="card">
                     <div class="card-header bg-primary">
@@ -59,7 +59,7 @@
                 </div>
             </section>
         </div>
-        <div class="col-8">
+        <div class="col-9">
             <section id="Forespørgsler">
                 <div class="card">
                     <div class="card-header bg-primary">
@@ -73,6 +73,7 @@
                             <th scope="col">Længde</th>
                             <th scope="col">Navn</th>
                             <th scope="col">Adresse</th>
+                            <th scope="col">Hus nr.</th>
                             <th scope="col">Telefon</th>
                             <th scope="col">Email</th>
                             </thead>
@@ -83,6 +84,7 @@
                                     <td>${fsp.length}</td>
                                     <td>${fsp.name}</td>
                                     <td>${fsp.address}</td>
+                                    <td>${fsp.houseNr}</td>
                                     <td>${fsp.phone}</td>
                                     <td>${fsp.email}</td>
                                     <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
