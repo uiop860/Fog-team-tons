@@ -9,17 +9,21 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div>
+        <div    class="mt-2 col-md-18">
             <h2>Tak for din henvendelse!</h2>
                 Vi kontakter dig hurtigst muligt angående din personlige carport.
+                En medarbejder vil gennemgå din forespørgsel og kontakte dig med et tilbud.
+
         </div>
-        <div>
+        <div class="mt-2 col-md-18">
             <a type="button" class="btn btn-sm  btn-outline-secondary"
                href="${pageContext.request.contextPath}/fc/index">Gå til forsiden</a>
         </div>
 
-        <div>
-            <img src="${pageContext.request.contextPath}/resources/img.png" alt="Smiley">
+        <div class="mt-2 col-md-18">
+            <div>
+            <img src="${pageContext.request.contextPath}/resources/smiley.png" alt="Smiley" width="200" height="200">
+            </div>
         </div>
 
     </jsp:body>
