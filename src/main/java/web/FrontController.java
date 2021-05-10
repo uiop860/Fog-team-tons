@@ -2,10 +2,12 @@ package web;
 
 import business.exceptions.UserException;
 import business.persistence.Database;
+import business.services.CarportDimensionsFacade;
 import web.commands.*;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
+import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.ServletException;
@@ -39,6 +41,17 @@ public class FrontController extends HttpServlet
         }
 
         // Initialize whatever global datastructures needed here:
+
+        CarportDimensionsFacade dimensionsFacade = new CarportDimensionsFacade(database);
+
+        try {
+
+            getServletContext().setAttribute("carportlength",dimensionsFacade.getCarportLengthFromDB());
+            getServletContext().setAttribute("carportwidth",dimensionsFacade.getCarportWidthFromDB());
+
+        } catch (UserException e){
+            Logger.getLogger("web").log(Level.SEVERE, e.getMessage(), e);
+        }
 
     }
 
