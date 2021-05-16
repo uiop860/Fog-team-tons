@@ -1,8 +1,9 @@
 package web.commands;
 
-import business.entities.Fsp;
+
+import business.entities.Request;
 import business.exceptions.UserException;
-import business.services.FspFacade;
+import business.services.RequestFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,18 +11,31 @@ import java.util.List;
 
 public class AdminCommand extends CommandProtectedPage
 {
-    FspFacade fspFacade;
+    RequestFacade requestFacade;
+    /*FspFacade fspFacade;*/
 
     public AdminCommand(String pageToShow, String role)
     {
         super(pageToShow, role);
-        this.fspFacade = new FspFacade(database);
+        /*this.fspFacade = new FspFacade(database);*/
+        this.requestFacade = new RequestFacade(database);
     }
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response)
     {
-        try
+
+        try{
+
+            List<Request> requestList = requestFacade.getAllRequestFromDB();
+            request.setAttribute("requestList",requestList);
+
+        } catch (UserException e){
+            e.printStackTrace();
+        }
+
+
+       /* try
         {
             List<Fsp> fspList = fspFacade.getfsp();
 
@@ -29,7 +43,7 @@ public class AdminCommand extends CommandProtectedPage
         } catch (UserException e)
         {
             e.printStackTrace();
-        }
+        }*/
 
         return pageToShow;
     }

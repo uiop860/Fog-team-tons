@@ -27,9 +27,10 @@
                     <label class="col-sm-1 col-form-label" for="password2">Kodeord</label>
                     <div class="col-sm-4">
                         <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Gentag kodeord">
+                        <div class="pt-3"><button type="submit" class="btn btn-primary btn-lg btn-block w-100" name="Opret" value="submit">Opret bruger</button></div>
                     </div>
                 </div>
-                <div class="row mb-3">
+                <%--<div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="name">Navn</label>
                     <div class="col-sm-4">
                         <input id="name" class="form-control" type="text" name="name" value="${param.name}"  placeholder="Mogens Jørgensen">
@@ -63,12 +64,12 @@
                     <label class="col-sm-1 col-form-label" for="city">By</label>
                     <div class="col-sm-4">
                         <input id="city" class="form-control" type="text" name="city" value="${param.city}"  placeholder="Odense">
-                        <div class="pt-3"><button type="submit" class="btn btn-primary btn-lg btn-block w-100" name="Opret" value="submit">Opret bruger</button></div>
 
                     </div>
-                </div>
+                </div>--%>
+                <%--<div class="pt-3"><button type="submit" class="btn btn-primary btn-lg btn-block w-100" name="Opret" value="submit">Opret bruger</button></div>--%>
 
-<%--                <input class="btn btn-primary" type="submit" value="Submit">--%>
+                <%--<input class="btn btn-primary" type="submit" value="Submit">--%>
             </form>
 
             <c:if test="${requestScope.error != null }">

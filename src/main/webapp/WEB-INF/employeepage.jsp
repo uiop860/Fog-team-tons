@@ -77,17 +77,22 @@
                             <th scope="col">Telefon</th>
                             <th scope="col">Email</th>
                             </thead>
-                            <c:forEach var="fsp" items="${requestScope.fspList}">
+                            <c:forEach var="requestList" items="${requestScope.requestList}">
                                 <tr>
-                                    <td>${fsp.id}</td>
-                                    <td>${fsp.width}</td>
-                                    <td>${fsp.length}</td>
-                                    <td>${fsp.name}</td>
-                                    <td>${fsp.address}</td>
-                                    <td>${fsp.houseNr}</td>
-                                    <td>${fsp.phone}</td>
-                                    <td>${fsp.email}</td>
+                                    <td>${requestList.requestID}</td>
+                                    <td>${requestList.carportWidth}</td>
+                                    <td>${requestList.carportLength}</td>
+                                    <td>${requestList.name}</td>
+                                    <td>${requestList.road}</td>
+                                    <td>${requestList.houseNumber}</td>
+                                    <td>${requestList.phone}</td>
+                                    <td>${requestList.email}</td>
+                                    <c:if test="${requestList.employeeID == 0}">
                                     <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
+                                    </c:if>
+                                    <c:if test="${requestList.employeeID != 0}">
+                                        <td>Taget</td>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
                         </table>

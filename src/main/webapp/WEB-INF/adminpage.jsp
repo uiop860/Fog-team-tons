@@ -20,7 +20,6 @@
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
                             <div class="row g-0">
-
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <h6 class="card-title">Lorem ipsum dolor sit amet...</h6>
@@ -76,16 +75,22 @@
                             <th scope="col">Telefon</th>
                             <th scope="col">Email</th>
                             </thead>
-                            <c:forEach var="fsp" items="${requestScope.fspList}">
+                            <c:forEach var="requestList" items="${requestScope.requestList}">
                                 <tr>
-                                    <td>${fsp.id}</td>
-                                    <td>${fsp.width}</td>
-                                    <td>${fsp.length}</td>
-                                    <td>${fsp.name}</td>
-                                    <td>${fsp.address}</td>
-                                    <td>${fsp.phone}</td>
-                                    <td>${fsp.email}</td>
-                                    <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
+                                    <td>${requestList.requestID}</td>
+                                    <td>${requestList.carportWidth}</td>
+                                    <td>${requestList.carportLength}</td>
+                                    <td>${requestList.name}</td>
+                                    <td>${requestList.road}</td>
+                                    <td>${requestList.houseNumber}</td>
+                                    <td>${requestList.phone}</td>
+                                    <td>${requestList.email}</td>
+                                    <c:if test="${requestList.employeeID == 0}">
+                                        <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
+                                    </c:if>
+                                    <c:if test="${requestList.employeeID != 0}">
+                                        <td>${requestList.employeeID}</td>
+                                    </c:if>
                                 </tr>
                             </c:forEach>
                         </table>

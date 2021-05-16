@@ -1,6 +1,5 @@
 package business.persistence;
 
-import business.entities.Fsp;
 import business.exceptions.UserException;
 
 import java.sql.Connection;
@@ -23,13 +22,12 @@ public class CarportDimenstionsMapper {
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM fog_db.carport_length ORDER BY carport_length_id ASC;";
+            String sql = "SELECT * FROM fog_db.carport_length ORDER BY carport_length ASC;";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
                 ResultSet rs = ps.executeQuery();
 
-                rs.next();
                 while (rs.next()){
                     hashMap.put(rs.getInt("carport_length_id"),rs.getInt("carport_length"));
                 }
@@ -51,13 +49,12 @@ public class CarportDimenstionsMapper {
 
         try (Connection connection = database.connect())
         {
-            String sql = "SELECT * FROM fog_db.carport_width ORDER BY carport_width_id ASC;";
+            String sql = "SELECT * FROM fog_db.carport_width ORDER BY carport_width ASC;";
 
             try (PreparedStatement ps = connection.prepareStatement(sql))
             {
                 ResultSet rs = ps.executeQuery();
 
-                rs.next();
                 while (rs.next()){
                     hashMap.put(rs.getInt("carport_width_id"),rs.getInt("carport_width"));
                 }

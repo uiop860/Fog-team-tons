@@ -1,16 +1,11 @@
 package web.commands;
 
-import business.entities.Address;
-import business.entities.Fsp;
-import business.entities.User;
+import business.entities.Request;
 import business.exceptions.UserException;
-import business.services.FspFacade;
-import business.services.OrderFacade;
+import business.services.RequestFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
-import java.util.List;
 
 public class FinishCommand extends Command
 {
@@ -23,10 +18,8 @@ public class FinishCommand extends Command
 
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
-        FspFacade fspFacade = new FspFacade(database);
-
-        int width;
-        int length;
+        int carportWidthID;
+        int carportLengthID;
         String name;
         String road;
         int houseNumber;
@@ -36,8 +29,8 @@ public class FinishCommand extends Command
         String email;
 
         try{
-            width = Integer.parseInt(request.getParameter("width"));
-            length = Integer.parseInt(request.getParameter("length"));
+            carportWidthID = Integer.parseInt(request.getParameter("width"));
+            carportLengthID = Integer.parseInt(request.getParameter("length"));
             name = request.getParameter("name");
             road = request.getParameter("road");
             houseNumber = Integer.parseInt(request.getParameter("housenumber"));
@@ -51,24 +44,12 @@ public class FinishCommand extends Command
             return "orderpage";
         }
 
-        User sessionUser = (User) request.getSession().getAttribute("user");
+        Request userRequest = new Request(carportWidthID,carportLengthID,name,road,houseNumber,zipCode,city,phone,email);
 
+        RequestFacade requestFacade = new RequestFacade(database);
 
+        requestFacade.insertRequestIntoDB(userRequest);
 
-//        User user;
-//        if(sessionUser == null){
-//            user = new User(email,null,"customer");
-//            user.setName(name);
-//            user.setPhone(phone);
-//        } else{
-//            user = sessionUser;
-//        }
-
-
-        fspFacade.createFSp(0, width, length, name, road, houseNumber, zipCode, city, phone, email);
-
-//        Address address = new Address(road,houseNumber,city,zipCode);
-//        orderFacade.insertOrderIntoDB(address,height,width,user);
 
         return pageToShow;
     }

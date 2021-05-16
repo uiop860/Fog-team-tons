@@ -32,12 +32,12 @@ public class RegisterCommand extends CommandUnprotectedPage
         String password2 = request.getParameter("password2");
 
 
-        String name = request.getParameter("name");
+        /*String name = request.getParameter("name");
         int phone = Integer.parseInt(request.getParameter("phone"));
         String road = request.getParameter("road");
         int house = Integer.parseInt(request.getParameter("house"));
         String city = request.getParameter("city");
-        int zipcode = Integer.parseInt(request.getParameter("zipcode"));
+        int zipcode = Integer.parseInt(request.getParameter("zipcode"));*/
 
 
 
@@ -46,8 +46,8 @@ public class RegisterCommand extends CommandUnprotectedPage
 
 
             User user = userFacade.createUser(email, password1);
-            Address address = new Address(road, house, city, zipcode, phone, name);
-            addressFacade.createAddress(address, email);
+            /*Address address = new Address(road, house, city, zipcode, phone, name);
+            addressFacade.createAddress(address, email);*/
 
             HttpSession session = request.getSession();
 

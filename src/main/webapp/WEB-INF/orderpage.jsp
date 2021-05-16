@@ -27,7 +27,7 @@
                         <select class="form-select" name="width" id="width">
                             <option selected="">Vælg bredde</option>
                             <c:forEach var="width" items="${applicationScope.carportwidth}">
-                                <option value="${width.value}">${width.value}</option>
+                                <option value="${width.key}">${width.value}</option>
                             </c:forEach>
                         </select>
                         <br>
@@ -35,7 +35,7 @@
                         <select class="form-select " name="length" id="length">
                             <option selected>Vælg længde</option>
                             <c:forEach var="length" items="${applicationScope.carportlength}">
-                                <option value="${length.value}">${length.value}</option>
+                                <option value="${length.key}">${length.value}</option>
                             </c:forEach>
                         </select>
                         <br><br>
