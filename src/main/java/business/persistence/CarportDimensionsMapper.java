@@ -8,11 +8,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-public class CarportDimenstionsMapper {
+public class CarportDimensionsMapper {
 
     Database database;
 
-    public CarportDimenstionsMapper(Database database) {
+    public CarportDimensionsMapper(Database database) {
         this.database = database;
     }
 

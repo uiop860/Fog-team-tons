@@ -1,23 +1,23 @@
 package business.services;
 
 import business.exceptions.UserException;
-import business.persistence.CarportDimenstionsMapper;
+import business.persistence.CarportDimensionsMapper;
 import business.persistence.Database;
 
 import java.util.HashMap;
 
 public class CarportDimensionsFacade {
 
-    private CarportDimenstionsMapper carportDimenstionsMapper;
+    private CarportDimensionsMapper carportDimensionsMapper;
 
     public CarportDimensionsFacade(Database database) {
-        this.carportDimenstionsMapper = new CarportDimenstionsMapper(database);
+        this.carportDimensionsMapper = new CarportDimensionsMapper(database);
     }
 
     public HashMap<Integer,Integer> getCarportLengthFromDB() throws UserException {
         HashMap<Integer,Integer> hashMap;
 
-        hashMap = carportDimenstionsMapper.getCarportLengthFromDB();
+        hashMap = carportDimensionsMapper.getCarportLengthFromDB();
 
 
         return hashMap;
@@ -25,7 +25,7 @@ public class CarportDimensionsFacade {
 
     public HashMap<Integer,Integer> getCarportWidthFromDB() throws UserException{
         HashMap<Integer,Integer> hashMap;
-        hashMap = carportDimenstionsMapper.getCarportWidthFromDB();
+        hashMap = carportDimensionsMapper.getCarportWidthFromDB();
 
 
         return hashMap;
