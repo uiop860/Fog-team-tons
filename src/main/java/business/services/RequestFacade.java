@@ -16,10 +16,9 @@ public class RequestFacade {
         this.requestMapper = new RequestMapper(database);
     }
 
-    public void insertRequestIntoDB(Request userRequest) throws UserException {
+    public int insertRequestIntoDB(Request userRequest) throws UserException {
 
-        requestMapper.insertRequestIntoDB(userRequest);
-
+        return requestMapper.insertRequestIntoDB(userRequest);
     }
 
     public List<Request> getAllRequestFromDB() throws UserException {

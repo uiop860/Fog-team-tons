@@ -16,7 +16,7 @@ public class RequestMapper {
         this.database = database;
     }
 
-    public void insertRequestIntoDB(Request userRequest) throws UserException {
+    public int insertRequestIntoDB(Request userRequest) throws UserException {
 
         try (Connection connection = database.connect()) {
 
@@ -36,9 +36,10 @@ public class RequestMapper {
                 ps.executeUpdate();
                 ResultSet rs = ps.getGeneratedKeys();
                 rs.next();
-                int id = rs.getInt(1);
-                userRequest.setRequestID(id);
+                int requestID = rs.getInt(1);
+                userRequest.setRequestID(requestID);
 
+                return requestID;
             }
             catch (SQLException ex) {
                 throw new UserException(ex.getMessage());

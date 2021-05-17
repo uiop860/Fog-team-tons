@@ -1,11 +1,17 @@
 package web.commands;
 
+import business.entities.OrderList;
 import business.entities.Request;
 import business.exceptions.UserException;
+import business.persistence.OrderListMapper;
+import business.services.OrderListFacade;
 import business.services.RequestFacade;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FinishCommand extends Command
 {
@@ -48,7 +54,31 @@ public class FinishCommand extends Command
 
         RequestFacade requestFacade = new RequestFacade(database);
 
-        requestFacade.insertRequestIntoDB(userRequest);
+        int requestID = requestFacade.insertRequestIntoDB(userRequest);
+
+        OrderListFacade orderListFacade = new OrderListFacade(database);
+
+        ServletContext servletContext = request.getServletContext();
+
+        HashMap<Integer,Integer> carportLengthMap = (HashMap<Integer, Integer>) servletContext.getAttribute("carportlength");
+        HashMap<Integer,Integer> carportWidthMap = (HashMap<Integer, Integer>) servletContext.getAttribute("carportwidth");
+
+        double carportLength = 0;
+        double carportWidth = 0;
+
+        for(Map.Entry<Integer, Integer> set: carportLengthMap.entrySet()){
+            if (set.getKey() == carportLengthID){
+                carportLength = (double) set.getValue();
+            }
+        }
+
+        for(Map.Entry<Integer, Integer> set: carportWidthMap.entrySet()){
+            if(set.getKey() == carportWidthID){
+                carportWidth = (double) set.getValue();
+            }
+        }
+
+        orderListFacade.calculateCarport(carportWidth,carportLength,requestID);
 
 
         return pageToShow;
