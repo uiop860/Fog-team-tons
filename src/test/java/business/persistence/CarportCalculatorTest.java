@@ -7,12 +7,14 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 public class CarportCalculatorTest {
 
     static int length;
-    static int width;
+    static double width;
     private final static String USER = "managesql";
     private final static String PASSWORD = "tt420";
     private final static String URL = "jdbc:mysql://206.81.26.54:3306/fog_db?serverTimezone=CET";
@@ -22,11 +24,10 @@ public class CarportCalculatorTest {
     static void setUpParameters() throws ClassNotFoundException {
 
         length = 500;
-        width = 420;
+        width = 240;
         database = new Database(USER,PASSWORD,URL);
 
     }
-
 
     @Test
     public void stolpeBeregner(){
@@ -97,7 +98,7 @@ public class CarportCalculatorTest {
         int spærMellemrum = (int) (length/antalSpær);
 
 
-        Assertions.assertEquals(5,antalSpær);
+        Assertions.assertEquals(9,antalSpær);
 
 
     }
@@ -120,19 +121,21 @@ public class CarportCalculatorTest {
     @Test
     public void tagpladeBeregner(){
 
-        int tapladeSplitter = 100;
+        double tapladeSplitter = 100;
         double antalTagplader;
         int sidsteTagpladeWidth;
 
         antalTagplader = Math.ceil(width/tapladeSplitter);
 
-        sidsteTagpladeWidth = width % tapladeSplitter;
+        System.out.println(antalTagplader);
 
-        Assertions.assertEquals(5,antalTagplader);
+        /*sidsteTagpladeWidth = width % tapladeSplitter;*/
+
+        Assertions.assertEquals(3,antalTagplader);
 
     }
 
-    @Test
+    /*@Test
     public void sidsteTagpladeBeregner(){
 
         int tapladeSplitter = 100;
@@ -148,18 +151,24 @@ public class CarportCalculatorTest {
     }
 
     @Test
-    public void calculateCarport() throws UserException {
+    public void calculateCarport() throws UserException, SQLException {
+
+        Connection connection = database.connect();
+
+        System.out.println(connection.isValid(10));
 
         OrderListMapper orderListMapper = new OrderListMapper(database);
 
-        OrderList orderList = orderListMapper.calculateCarport(width,length);
+        OrderList orderList = orderListMapper.calculateCarport(width,length,1);
 
         List<Material> materialList = orderList.getMaterialList();
 
         for (Material i: materialList) {
 
-            System.out.println(i.getAmount());
+            System.out.print(i.getName()+" ");
+            System.out.print(i.getTotalPrice());
+            System.out.println();
 
         }
-    }
+    }*/
 }

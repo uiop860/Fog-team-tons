@@ -10,7 +10,7 @@ public class Material {
     private int amount = 0;
     private int length;
     private String category;
-    private int totalPrice;
+    private double totalPrice;
     private int spacing = 0;
     private int lastRoofPlateWidth = 0;
 
@@ -24,11 +24,11 @@ public class Material {
     }
 
 
-    public void calculateAmountAndPrice(int carportWidth, int carportLength){
+    public void calculateAmountAndPrice(double carportWidth, double carportLength){
 
         switch (materialID){
             case 1:
-                int lengthAfterMinus = carportLength-120;
+                double lengthAfterMinus = carportLength-120;
                 int postSplitter = 310;
                 int cornerPosts = 2;
                 int postSpacing;
@@ -42,9 +42,9 @@ public class Material {
                 }
 
                 if(amount == 0){
-                    postSpacing = lengthAfterMinus;
+                    postSpacing = (int)lengthAfterMinus;
                 } else {
-                    postSpacing =  lengthAfterMinus/(amount+1);
+                    postSpacing =  (int)lengthAfterMinus/(amount+1);
                 }
 
                 spacing = postSpacing;
@@ -52,35 +52,45 @@ public class Material {
                 amount *= 2;
                 length = postLength;
 
+                totalPrice = (length*price)*amount;
+
                 break;
 
             case 2:
                 int raftersSplitter = 55;
                 amount = (int) Math.ceil(carportLength/raftersSplitter);
-                int raftersSpacing = (carportLength/amount);
+                int raftersSpacing = (int)(carportLength/amount);
                 spacing = raftersSpacing;
-                length = carportWidth;
+                length = (int)carportWidth;
+
+                totalPrice = (length*price)*amount;
 
                 break;
 
             case 3:
                 int roofPlateSplitter = 100;
-                amount = (int) Math.ceil(carportWidth/roofPlateSplitter);
-                lastRoofPlateWidth = carportWidth % roofPlateSplitter;
-                length = carportLength;
+                amount =  (int)Math.ceil(carportWidth/roofPlateSplitter);
+                lastRoofPlateWidth = (int)carportWidth % roofPlateSplitter;
+                length = (int)carportLength;
+
+                totalPrice = (length*price)*amount;
 
                 break;
 
             case 4:
                 int beamAmountOnLongSide = 2; //hvis carporten er firkantet er der altid 2
                 amount = beamAmountOnLongSide;
-                length = carportLength;
+                length = (int)carportLength;
+
+                totalPrice = (length*price)*amount;
 
                 break;
             case 5:
                 int beamAmountOnBroadSide = 2; //hvis carporten er firkantet er der altid 2
                 amount = beamAmountOnBroadSide;
-                length = carportWidth;
+                length = (int)carportWidth;
+
+                totalPrice = (length*price)*amount;
 
                 break;
         }
@@ -107,7 +117,7 @@ public class Material {
         this.lastRoofPlateWidth = lastRoofPlateWidth;
     }
 
-    public int getTotalPrice() {
+    public double getTotalPrice() {
         return totalPrice;
     }
 
