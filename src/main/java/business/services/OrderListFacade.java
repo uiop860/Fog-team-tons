@@ -12,9 +12,9 @@ public class OrderListFacade {
         this.orderListMapper = new OrderListMapper(database);
     }
 
-    public void calculateCarport(int carportWidthID, int carportLengthID) throws UserException {
+    public void calculateCarport(int carportWidth, int carportLength) throws UserException {
 
-        orderListMapper.calculateCarport(carportWidthID,carportLengthID);
+        orderListMapper.calculateCarport(carportWidth,carportLength);
 
     }
 }

@@ -1,19 +1,29 @@
 package business.persistence;
 
+import business.entities.Material;
+import business.entities.OrderList;
+import business.exceptions.UserException;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+
+import java.util.List;
 
 public class CarportCalculatorTest {
 
     static int length;
     static int width;
+    private final static String USER = "managesql";
+    private final static String PASSWORD = "tt420";
+    private final static String URL = "jdbc:mysql://206.81.26.54:3306/fog_db?serverTimezone=CET";
+    private static Database database;
 
     @BeforeAll
-    static void setUpParameters(){
+    static void setUpParameters() throws ClassNotFoundException {
 
         length = 500;
         width = 420;
+        database = new Database(USER,PASSWORD,URL);
 
     }
 
@@ -137,7 +147,19 @@ public class CarportCalculatorTest {
 
     }
 
+    @Test
+    public void calculateCarport() throws UserException {
 
+        OrderListMapper orderListMapper = new OrderListMapper(database);
 
+        OrderList orderList = orderListMapper.calculateCarport(width,length);
 
+        List<Material> materialList = orderList.getMaterialList();
+
+        for (Material i: materialList) {
+
+            System.out.println(i.getAmount());
+
+        }
+    }
 }

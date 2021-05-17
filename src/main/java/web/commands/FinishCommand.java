@@ -6,8 +6,11 @@ import business.persistence.OrderListMapper;
 import business.services.OrderListFacade;
 import business.services.RequestFacade;
 
+import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.HashMap;
+import java.util.Map;
 
 public class FinishCommand extends Command
 {
@@ -54,11 +57,27 @@ public class FinishCommand extends Command
 
         OrderListFacade orderListFacade = new OrderListFacade(database);
 
+        ServletContext servletContext = request.getServletContext();
 
+        HashMap<Integer,Integer> carportLengthMap = (HashMap<Integer, Integer>) servletContext.getAttribute("carportlength");
+        HashMap<Integer,Integer> carportWidthMap = (HashMap<Integer, Integer>) servletContext.getAttribute("carportwidth");
 
+        int carportLength = 0;
+        int carportWidth = 0;
 
+        for(Map.Entry<Integer, Integer> set: carportLengthMap.entrySet()){
+            if (set.getKey() == carportLengthID){
+                carportLength = set.getValue();
+            }
+        }
 
-        orderListFacade.calculateCarport(carportWidthID,carportLengthID);
+        for(Map.Entry<Integer, Integer> set: carportWidthMap.entrySet()){
+            if(set.getKey() == carportWidthID){
+                carportWidth = set.getValue();
+            }
+        }
+
+        orderListFacade.calculateCarport(carportWidth,carportLength);
 
 
         return pageToShow;
