@@ -2,6 +2,8 @@ package web.commands;
 
 import business.entities.Request;
 import business.exceptions.UserException;
+import business.persistence.OrderListMapper;
+import business.services.OrderListFacade;
 import business.services.RequestFacade;
 
 import javax.servlet.http.HttpServletRequest;
@@ -49,6 +51,14 @@ public class FinishCommand extends Command
         RequestFacade requestFacade = new RequestFacade(database);
 
         requestFacade.insertRequestIntoDB(userRequest);
+
+        OrderListFacade orderListFacade = new OrderListFacade(database);
+
+
+
+
+
+        orderListFacade.calculateCarport(carportWidthID,carportLengthID);
 
 
         return pageToShow;
