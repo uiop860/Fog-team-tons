@@ -1,10 +1,12 @@
 package business.persistence;
 
 
+import business.entities.MaterialListItem;
 import business.entities.Request;
 import business.exceptions.UserException;
 
 import java.sql.*;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +110,7 @@ public class RequestMapper {
             Request request;
             try (Connection connection = database.connect()){
 
-                String sql = "SELECT r.request_id,r.phone,name,email,road,housenumber,city,zipcode,employee_id,r.carport_length_id,r.carport_width_id,L.carport_length,W.carport_width " +
+                String sql = "SELECT r.request_id,r.phone,name,email,road,housenumber,city,zipcode,employee_id,r.carport_length_id,r.carport_width_id,L.carport_length,W.carport_width,r.total_carport_price " +
                 "FROM request r " +
                 "INNER JOIN carport_length L ON r.carport_length_id = L.carport_length_id "+
                 "INNER JOIN carport_width W ON r.carport_width_id = W.carport_width_id " +
@@ -133,12 +135,15 @@ public class RequestMapper {
                         int carportLengthID = rs.getInt("carport_length_id");
                         int carportWidth = rs.getInt("carport_width");
                         int carportLength = rs.getInt("carport_length");
+                        double total_price = rs.getDouble("total_carport_price");
 
                         request = new Request(carportWidthID, carportLengthID, name, road, houseNumber, zipcode, city, phone, email);
                         request.setEmployeeID(employeeID);
                         request.setRequestID(requestID);
                         request.setCarportWidth(carportWidth);
                         request.setCarportLength(carportLength);
+                        total_price = Double.parseDouble(new DecimalFormat("#.##").format(total_price));
+                        request.setTotal_price(total_price);
 
                         return request;
                     }
@@ -178,5 +183,35 @@ public class RequestMapper {
         }
     }
 
+    public List<MaterialListItem> getMaterialList (int requestID) throws UserException
+    {
+        List<MaterialListItem> materialList = new ArrayList<>();
+        try(Connection connection = database.connect())
+        {
+            String sql ="SELECT * FROM fog_db.orderlist INNER JOIN fog_db.material ON orderlist.material_id=material.material_id WHERE request_id =?;";
+
+            try(PreparedStatement ps = connection.prepareStatement(sql))
+            {
+
+                ps.setInt(1, requestID);
+                ResultSet rs = ps.executeQuery();
+                while(rs.next())
+                {
+                    int amount = rs.getInt("amount");
+                    double total_material_price = rs.getDouble("total_material_price");
+                    String material_name = rs.getString("material_name");
+                    String description = rs.getString("description");
+
+                    total_material_price = Double.parseDouble(new DecimalFormat("#.##").format(total_material_price));
+                    materialList.add(new MaterialListItem(amount, total_material_price, material_name, description));
+                }
+                return materialList;
+            }
+        } catch (SQLException throwables)
+        {
+            throwables.printStackTrace();
+        }
+        return materialList;
+    }
 
 }

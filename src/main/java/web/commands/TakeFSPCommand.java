@@ -1,5 +1,6 @@
 package web.commands;
 
+import business.entities.MaterialListItem;
 import business.entities.Request;
 import business.exceptions.UserException;
 import business.services.RequestFacade;
@@ -7,6 +8,7 @@ import business.services.UserFacade;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 public class TakeFSPCommand extends CommandProtectedPage
 {
@@ -28,6 +30,8 @@ public class TakeFSPCommand extends CommandProtectedPage
         requestFacade.assignEmployee(requestID, employeeID);
         Request request1 = requestFacade.getRequestFromID(requestID);
         request.setAttribute("request", request1);
+        List<MaterialListItem> materialList = requestFacade.getMaterialList(requestID);
+        request.setAttribute("materialList", materialList);
         return pageToShow;
     }
 

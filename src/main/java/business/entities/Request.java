@@ -16,6 +16,7 @@ public class Request {
     private int phone;
     private String email;
     private int employeeID;
+    private double total_price;
 
     public Request(int carportWidthID, int carportLengthID, String name, String road, int houseNumber, int zipcode, String city, int phone, String email) {
         this.carportWidthID = carportWidthID;
@@ -30,8 +31,19 @@ public class Request {
     }
 
 
+    public double getTotal_price()
+    {
+        return total_price;
+    }
+
+    public void setTotal_price(double total_price)
+    {
+        this.total_price = total_price;
+    }
 
     /** getters and setters **/
+
+
 
     public int getCarportWidth() {
         return carportWidth;

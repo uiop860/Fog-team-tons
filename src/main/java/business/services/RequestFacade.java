@@ -1,5 +1,6 @@
 package business.services;
 
+import business.entities.MaterialListItem;
 import business.entities.Request;
 import business.exceptions.UserException;
 import business.persistence.Database;
@@ -44,6 +45,12 @@ public class RequestFacade {
         int rowsAffected = requestMapper.assignEmployee(requestID, employeeID);
 
         return rowsAffected;
+    }
+
+    public List<MaterialListItem> getMaterialList (int requestID) throws UserException
+    {
+        List<MaterialListItem> materialList = requestMapper.getMaterialList(requestID);
+        return materialList;
     }
 
 }
