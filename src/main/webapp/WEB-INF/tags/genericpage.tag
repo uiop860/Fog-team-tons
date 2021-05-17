@@ -86,4 +86,24 @@
 </div>
 
 </body>
+
+<footer>
+    <div>
+            <table class="table table-sm caption-top">
+                <caption>Har du brug for hjælp? Kontakt os her.</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Telefon:</th>
+                        <th scope="col">Email:</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                <td>45 87 10 01</td>
+                <td>info@Johannesfog.dk</td>
+
+                </tbody>
+            </table>
+    </div>
+</footer>
 </html>
