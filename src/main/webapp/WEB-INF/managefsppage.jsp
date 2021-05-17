@@ -54,6 +54,17 @@
                         </table>
                     </div>
                 </section>
+
+        <div class="modal-body row">
+            <div class="col-md-4">
+                <img src="https://lh3.googleusercontent.com/pw/ACtC-3db4WVzov-MjX84nhSnBxR80Q_riOV20hwa-UEJtRzXRg7s3Im5xY0TTOOjlspoCN9dv2gDm1K8Zz20FkaGis20_vst0zdlJJtomzBnAG-uSsXB2qmVFChxf0xsZj01fn9PLWx9FD_Ai2hm-DBK_kGP=w1250-h937-no?authuser=0" width="100%">
+            </div>
+            <div class="col-md-8">
+                <img src="https://lh3.googleusercontent.com/pw/ACtC-3e2B2OQYhUkn2se09sjUgRph4M249NVF__uVtIh5J3uK_nV96dVhqAd09WHDsM0OCJrvqj43lm98QsVlEUuvZsJSSmYsQEETxr-v3qq3uYhbDkp6aliYFWQ7t9mhRaWaQLyFRFpmqsHHkg24729Scy5=w1250-h937-no?authuser=0" width="100%">
+            </div>
+        </div>
+
+
         <div>
     </jsp:body>
 </t:genericpage>
