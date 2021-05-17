@@ -5,7 +5,7 @@ import java.util.List;
 public class OrderList {
 
     private List<Material> materialList;
-    private int totalPriceOfCarport;
+    private double totalPriceOfCarport;
 
 
     public OrderList(List<Material> materialList) {
@@ -24,7 +24,7 @@ public class OrderList {
 
     /** getters and setters **/
 
-    public int getTotalPriceOfCarport() {
+    public double getTotalPriceOfCarport() {
         return totalPriceOfCarport;
     }
 

@@ -42,7 +42,7 @@ public class OrderListMapper {
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
 
-                ps.setInt(1,orderList.getTotalPriceOfCarport()); //TODO: gør så prisen ikke har mere end 2 decimaler
+                ps.setDouble(1,orderList.getTotalPriceOfCarport()); //TODO: gør så prisen ikke har mere end 2 decimaler
                 ps.setInt(2,requestID);
                 ps.executeUpdate();
 
