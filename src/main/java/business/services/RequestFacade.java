@@ -31,5 +31,20 @@ public class RequestFacade {
         return requestList;
     }
 
+    public Request getRequestFromID(int id) throws UserException
+    {
+        Request request;
+
+        request = requestMapper.getRequestFromID(id);
+        return request;
+    }
+
+
+    public int assignEmployee(int requestID, int employeeID) throws UserException
+    {
+        int rowsAffected = requestMapper.assignEmployee(requestID, employeeID);
+
+        return rowsAffected;
+    }
 
 }

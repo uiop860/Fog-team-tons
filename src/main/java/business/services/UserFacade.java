@@ -26,4 +26,9 @@ public class UserFacade
         return user;
     }
 
+    public int getEmployeeID(String email) throws UserException {
+        int employeeID = userMapper.getEmployeeID(email);
+        return employeeID;
+    }
+
 }

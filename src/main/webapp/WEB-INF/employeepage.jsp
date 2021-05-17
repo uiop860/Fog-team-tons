@@ -87,17 +87,17 @@
                                     <td>${requestList.houseNumber}</td>
                                     <td>${requestList.phone}</td>
                                     <td>${requestList.email}</td>
-                                    <c:if test="${requestList.employeeID == 0}">
-                                    <td><button class="btn btn-primary text-light">Tag forespørgsel</button></td>
-                                    </c:if>
-                                    <c:if test="${requestList.employeeID != 0}">
-                                        <td>Taget</td>
-                                    </c:if>
+                                    <td>
+                                        <form action="${pageContext.request.contextPath}/fc/managefsp" method="post">
+                                            <button name="manageRequest" value="${requestList.requestID}" class="btn btn-primary text-light" type="submit">Vis</button>
+                                        </form>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </table>
                     </div>
                 </div>
+<%--                <button class="btn btn-primary text-light">Tag forespørgsel</button>--%>
             </section>
         </div>
 

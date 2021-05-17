@@ -32,6 +32,8 @@ public abstract class Command
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
         commands.put("adminpage", new AdminCommand("adminpage", "admin"));
+        commands.put("managefsp", new ManageFSPCommand("managefsppage", "employee"));
+        commands.put("takefsp", new TakeFSPCommand("managefsppage", "employee"));
     }
 
     public static Command fromPath(

@@ -70,4 +70,26 @@ public class UserMapper {
             throw new UserException("Connection to database could not be established");
         }
     }
+    public int getEmployeeID(String email) throws UserException
+    {
+        int id = 0;
+        try (Connection connection = database.connect())
+        {
+            String sql = "SElECT employee_id From fog_db.employee WHERE email=?;";
+            try(PreparedStatement ps = connection.prepareStatement(sql))
+            {
+                ps.setString(1, email);
+                ResultSet rs = ps.executeQuery();
+                if(rs.next())
+                {
+                    id = rs.getInt("employee_id");
+                    return id;
+                }
+            }
+        } catch (SQLException throwables)
+        {
+            throwables.printStackTrace();
+        }
+        return id;
+    }
 }
