@@ -1,0 +1,88 @@
+#Stykliste
+
+
+Stolper:
+
+Max 3,10 meters mellemrum.
+
+Husk at rund op for stabilitet.
+
+Første stolpe starter 1 meter inde.
+
+Bagerste stolpe starte ca. 20 cm inde.
+
+Skal graves 90 cm ned.
+
+
+
+Rem:
+
+2 Remme, opdeles ved skur og forlænges ved skur
+
+Uden skur er rem længde = carport lægnde.
+
+Rem skal slutte over en stolpe hvis opdeling er nødvendig.
+
+
+Spær: 
+
+0,55 meter imellem hvert spær
+
+Husk at rund op for stabilitet.
+
+eksempel. længde på carport 7.8 meter 
+7,8 / 0,55 = 14,18 ~altså 15 spær til 7,8 meter~
+
+
+%START MED DE TRE TING OG UDVID HVIS DER ER TID
+
+
+Java:
+
+Brug ArrayList
+
+Klasser: 
+ - CarportItem
+ {
+ 	Length
+ 	Quantity
+ 	Price #Attribute
+ 	Description #Attribute
+ }
+
+ Bill of materials 
+ { 
+ 	List<Carport items> #Attribute
+ 	GetTotalPrice #Metode
+	 AddItem(carport item) #Metode
+ }
+
+
+ calcCarport
+ {
+ 	calcPosts(Længde og bredde) #Beregn stolper
+ 	calcBeams (Længde og bredde) #Beregner Rem
+ 	calcRafter (Længde og bredde) #Beregner Spær
+ }
+
+(Static metoder?)
+ calcPart 
+ {
+ 	calcPost
+ 	calcBeams
+ 	calcRafter
+ }
+
+Result
+{
+	private int length;
+
+	private int quantity
+
+
+	Constructor()
+
+
+
+	new Result(780, 8)
+}

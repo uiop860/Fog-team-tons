@@ -1,0 +1,56 @@
+#Fog Team Tons
+
+#Spørgsmål til palle 11/05 13:30
+
+1. Hvornår skal man oprette sig som bruger?
+	- Skal man kunne lave en forespørgsel uden at være logget ind?
+
+2. Hvilke informationer skal vi have fra kunden omkring carporten?
+
+3. Hvornår skal kunden få adgang til tegning og stykliste?
+
+4. Hvad er relevant for kunden at have på sin profil side?
+
+#Spørgsmål til palle 12/05 08:40
+
+1. Scrum master - krav og nødvendighed?
+
+(2. Domæne model)
+
+
+#Noter
+
+1. Brugeren behøver ikke oprette sig endnu(måske aldrig).
+
+3. Tegning må de gerne se inden de har betalt. Styklisten er til medarbejderen. Kunden får Stykliste + vejledning efter de har betalt.
+
+#Scrum Test
+- Acceptance test.
+
+
+#Retrospective meeting 11/05 kl. 20:00:
+
+#Arbejdsprocess:
+Vi uddelegere og samles når en opgave er løst eller ved problemer. Dette sker oftes en gang om dagen. Dette fandt vi ud af virkede fra vores sidste projekt da vi en hjemmeside til en virksomhed, som solgte cupcakes. 
+
+#Userstories:
+Vi har endnu ikke haft problemer med at nedbryde user stories i tasks og har ikke stødt på problemer som ikke blev løst. Dette skyldes at vi altid er i dialog omkring tasks og ideer.
+
+#Scrum Meetings:
+Vi har fra dag et holdt scrum meetings i slutningen af en fælles arbejdsdag. Til disse scrum meetings har vi bl.a. snakket om:
+* Hvad har vi nået?
+* Hvad skal vi nå?
+* Hvad er vigtigst?
+* Hvem er ansvarlig for hvad?
+* Evt. ideer.
+
+
+#Hvornår fandt vi vores rytme?
+Ligesom fra vores forrige projekt, så starter vi processen ud med at danne os et overblik over diverse tasks og finde en fælles billede af hvordan produktet skal se ud og opføre sig. Derefter går det stærkt med at få uddelegeret tasks og vi er ofte på forkant med det tekniske.
+
+#Uenigheder:
+Vi har få uenigheder da vi oftes ser ens på tingene. Dog hvis uenigheder fremokmmer, så får vi dem løst inden vi uddelegere tasks for dagen
+
+#Tidsvurdering af user stories:
+Vi overvurdere oftes tiden der skal bruges på hver enkelt user story og det resultere i at vi så små starter på opgaver til det næste sprint.
+
