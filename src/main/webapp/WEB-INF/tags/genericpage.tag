@@ -6,7 +6,7 @@
 <%@attribute name="footer" fragment="true" %>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" >
 
 <head>
     <meta charset="UTF-8">
@@ -31,9 +31,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/fc/loginpage">Profil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Fisk</a>
                 </li>
             </ul>
             <div>
@@ -77,33 +74,22 @@
     <jsp:doBody/>
 </div>
 
-<!-- Footer -->
-<div class="container">
-    <br>
-    <hr>
-    <br>
+
     <jsp:invoke fragment="footer"/>
-</div>
-
+    <br>
+    <br>
+    <footer class="container pt-3 px-4 bg-light">
+        <div class="row">
+            <div class="col-6 col-md">
+                <h5>Kontakt</h5>
+                <ul class="list-unstyled text-muted">
+                    <li>Telefon: +45 45871001</li>
+                    <li>Email: info@Johannesfog.dk</li>
+                </ul>
+            </div>
+            <div class="col-6 col-md">
+            </div>
+        </div>
+    </footer>
 </body>
-
-<footer>
-    <div>
-            <table class="table table-sm caption-top">
-                <caption>Har du brug for hjælp? Kontakt os her.</caption>
-                <thead>
-                    <tr>
-                        <th scope="col">Telefon:</th>
-                        <th scope="col">Email:</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                <td>45 87 10 01</td>
-                <td>info@Johannesfog.dk</td>
-
-                </tbody>
-            </table>
-    </div>
-</footer>
 </html>
