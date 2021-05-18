@@ -7,13 +7,15 @@ import business.exceptions.UserException;
 
 import java.sql.*;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class RequestMapper {
 
     private Database database;
-
+    public static DecimalFormat decFormat = (DecimalFormat) NumberFormat.getNumberInstance(new Locale("en", "UK"));
     public RequestMapper(Database database) {
         this.database = database;
     }
@@ -202,7 +204,8 @@ public class RequestMapper {
                     String material_name = rs.getString("material_name");
                     String description = rs.getString("description");
 
-                    total_material_price = Double.parseDouble(new DecimalFormat("#.##").format(total_material_price));
+                    decFormat.applyPattern("#.##");
+                    total_material_price = Double.parseDouble(decFormat.format(total_material_price));
                     materialList.add(new MaterialListItem(amount, total_material_price, material_name, description));
                 }
                 return materialList;
