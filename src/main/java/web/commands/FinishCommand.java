@@ -85,9 +85,9 @@ public class FinishCommand extends Command
         List<Material> materialList = orderList.getMaterialList();
 
 
-        SVG svg = new SVG(0,0,"0 0 "+carportLength+100+" "+carportWidth+100,80,80);
+        SVG svg = new SVG(0,0,"0 0 "+(carportLength+100)+" "+(carportWidth+100),80,80);
         svg.addSvg(svg);
-            svg.addRect(1,1,carportWidth-2,carportLength-2);
+            svg.addRect(1,1,carportWidth,carportLength);
             for (Material mat: materialList) {
                 switch (mat.getMaterialID()){
                     case 1:
@@ -95,9 +95,11 @@ public class FinishCommand extends Command
                     case 2:
                         for (int i = 0; i < mat.getAmount(); i++) {
 
-                            svg.addRect(mat.getSpacing()*i,0,carportWidth,4.5);
-
-
+                        if (mat.getSpacing()==carportLength) {
+                            svg.addRect(mat.getSpacing()- 4.5, 1, carportWidth, 4.5);
+                        } else {
+                            svg.addRect(mat.getSpacing() * i, 1, carportWidth, 4.5);
+                        }
                         }
 
                         break;
