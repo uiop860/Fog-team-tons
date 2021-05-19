@@ -7,13 +7,8 @@
         <packaging>war</packaging>
       </options>
     </properties>
-<<<<<<< HEAD:.idea/artifacts/bmi_war.xml
-    <root id="archive" name="FOG-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="bmi:war exploded" />
-=======
     <root id="archive" name="Fog-TeamTons-1.0-SNAPSHOT.war">
       <element id="artifact" artifact-name="Fog-TeamTons:war exploded" />
->>>>>>> main:.idea/artifacts/Fog_TeamTons_war.xml
     </root>
   </artifact>
 </component>
