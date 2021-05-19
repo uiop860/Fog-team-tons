@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>dat</groupId>
-    <artifactId>FOG</artifactId>
+    <artifactId>Fog-TeamTons</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>FOG</name>
+    <name>Fog-TeamTons</name>
 
 
     <properties>

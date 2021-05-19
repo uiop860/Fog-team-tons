@@ -1,17 +1,26 @@
 <component name="ArtifactManager">
+<<<<<<< HEAD:.idea/artifacts/bmi_war_exploded.xml
   <artifact type="exploded-war" name="bmi:war exploded">
     <output-path>$PROJECT_DIR$/target/FOG-1.0-SNAPSHOT</output-path>
+=======
+  <artifact type="exploded-war" name="Fog-TeamTons:war exploded">
+    <output-path>$PROJECT_DIR$/target/Fog-TeamTons-1.0-SNAPSHOT</output-path>
+>>>>>>> main:.idea/artifacts/Fog_TeamTons_war_exploded.xml
     <properties id="maven-jee-properties">
       <options>
         <exploded>true</exploded>
-        <module>bmi</module>
+        <module>Fog-TeamTons</module>
         <packaging>war</packaging>
       </options>
     </properties>
     <root id="root">
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
+<<<<<<< HEAD:.idea/artifacts/bmi_war_exploded.xml
           <element id="module-output" name="FOG" />
+=======
+          <element id="module-output" name="Fog-TeamTons" />
+>>>>>>> main:.idea/artifacts/Fog_TeamTons_war_exploded.xml
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: org.webjars:bootstrap:4.3.1" />
@@ -23,9 +32,15 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
+<<<<<<< HEAD:.idea/artifacts/bmi_war_exploded.xml
         <element id="file-copy" path="$PROJECT_DIR$/target/FOG-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="FOG/web/Web" />
+=======
+        <element id="file-copy" path="$PROJECT_DIR$/target/Fog-TeamTons-1.0-SNAPSHOT/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="Fog-TeamTons/web/Web" />
+>>>>>>> main:.idea/artifacts/Fog_TeamTons_war_exploded.xml
     </root>
   </artifact>
 </component>

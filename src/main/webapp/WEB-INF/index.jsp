@@ -13,20 +13,27 @@
     </jsp:attribute>
 
     <jsp:body>
-            <div>
-                    <h1 class="pb-3 text-center">Skræddersyet carport</h1>
+        <div class="row pt-5">
+            <div class="col-lg-3">
+
             </div>
-        <div>
-            <h5 class="pb-3">
-                Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
-                <br><br>
-                Tilbud og skitsetegning fremsendes med post hurtigst muligt.
-                <br><br>
-                Ved bestilling medfølger standardbyggevejledning.
-            </h5>
+            <div class="col-lg-6">
+                <div class="fs-1 pb-5 text-primary text-center">
+                    Skræddersyet carport
+                </div>
+                <div class="fs-5" >
+                    Med et specialudviklet computerprogram kan vi lynhurtigt beregne prisen og udskrive en skitsetegning på
+                    en carport indenfor vores standardprogram, der tilpasses dine specifikke ønsker.
+                    <br><br>
+                    Tilbud og skitsetegning fremsendes med post hurtigst muligt.
+                    <br><br>
+                    Ved bestilling medfølger standardbyggevejledning.
+                </div>
+                <div class="pt-4">
+                    <a href="${pageContext.request.contextPath}/fc/orderpage" class="btn btn-primary">Find din carport</a>
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
         </div>
-        <div class="pb-3 text-left">
-        <a href="${pageContext.request.contextPath}/fc/orderpage" class="btn btn-lg btn-block btn-primary">Find din carport<a>
-        <div>
     </jsp:body>
 </t:genericpage>

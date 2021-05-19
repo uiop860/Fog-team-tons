@@ -13,74 +13,79 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div>
-            <h1 class="pb-3 text-center">Skræddersyet carport</h1>
-            <br>
-        </div>
         <form method="post" action="${pageContext.request.contextPath}/fc/finishpage" class="align-content-center">
-            <div class="row">
-                <div class="col-sm-3"></div>
-                <div class="col-sm-6">
+            <div class="row pt-5">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
                     <div class="pb-3">
-                        <h4 class="pb-3 text-center">Vælg længde og bredde på carport</h4>
-                        Vælg bredde på carport
-                        <select class="form-select" name="width" id="width">
-                            <option selected="">Vælg bredde</option>
-                            <c:forEach var="width" items="${applicationScope.carportwidth}">
-                                <option value="${width.key}">${width.value}</option>
-                            </c:forEach>
-                        </select>
-                        <br>
-                        Vælg længde på carport
-                        <select class="form-select " name="length" id="length">
-                            <option selected>Vælg længde</option>
-                            <c:forEach var="length" items="${applicationScope.carportlength}">
-                                <option value="${length.key}">${length.value}</option>
-                            </c:forEach>
-                        </select>
-                        <br><br>
-
-                        <h4 class="pb-3 text-center">Kontaktinformation</h4>
+                        <div class="fs-1 text-primary pb-5 text-center ">
+                            Skræddersyet carport
+                        </div>
+                        <div class="fs-4 text-primary pb-3 text-center">
+                            Vælg længde og bredde på carport
+                        </div>
+                        <label class="fs-6 pb-1" for="width">
+                            Vælg bredde på carport
+                        </label>
+                        <div class="pb-3">
+                            <select class="form-select" name="width" id="width">
+                                <option selected="">Vælg bredde</option>
+                                <c:forEach var="width" items="${applicationScope.carportwidth}">
+                                    <option value="${width.key}">${width.value}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <label class="fs-6 pb-1" for="length">
+                            Vælg længde på carport
+                        </label>
+                        <div class="pb-5">
+                            <select class="form-select " name="length" id="length">
+                                <option selected>Vælg længde</option>
+                                <c:forEach var="length" items="${applicationScope.carportlength}">
+                                    <option value="${length.key}">${length.value}</option>
+                                </c:forEach>
+                            </select>
+                        </div>
+                        <div class="fs-4 text-primary pb-3 text-center">
+                            Kontaktinformation
+                        </div>
 
                         <div class="d-flex ">
                             <div class="p-2 flex-fill">
-                                <label for="name">Navn</label><br>
-                                <input class ="form-control" type="text" id="name" name="name" placeholder="Indtast dit navn" value="">
+                                <label class="pb-1" for="name">Navn</label><br>
+                                <input class ="form-control" type="text" id="name" name="name" placeholder="Anders" value="">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 w-100">
-                                <label for="road">Adresse</label><br>
-                                <input class ="form-control w-100" id="road" type="text" name="road" value="" placeholder="Indtast adresse">
+                                <label class="pb-1" for="road">Adresse</label><br>
+                                <input class ="form-control w-100" id="road" type="text" name="road" value="" placeholder="Jagtvej">
                             </div>
                             <div class="p-2 align-items-end w-25">
-                                <label  for="housenumber">Hus nr.</label><br>
-                                <input class ="form-control w-100" id="housenumber" type="number" name="housenumber" value="">
+                                <label class="pb-1" for="housenumber">Hus nr.</label><br>
+                                <input class ="form-control w-100" id="housenumber" type="number" name="housenumber" value="" placeholder="54">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 align-items-start w-50">
-                                <label for="zipcode">Postnummer</label><br>
-                                <input class ="form-control w-100" id="zipcode" type="text" name="zipcode" value=""
-                                       placeholder="Indtast postnummer">
+                                <label class="pb-1" for="zipcode">Postnummer</label><br>
+                                <input class ="form-control w-100" id="zipcode" type="text" name="zipcode" value="" placeholder="2200">
                             </div>
                             <div class="p-2 w-100">
-                                <label  for="city">By</label><br>
-                                <input class ="form-control w-100" id="city" type="text" name="city" value="" placeholder="Indtast by">
+                                <label class="pb-1" for="city">By</label><br>
+                                <input class ="form-control w-100" id="city" type="text" name="city" value="" placeholder="København">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 flex-fill">
-                                <label for="phone">Telefon</label><br>
-                                <input class ="form-control" id="phone" type="number" name="phone" value=""
-                                       placeholder="Indtast gyldigt telefonnummer">
+                                <label class="pb-1" for="phone">Telefon</label><br>
+                                <input class ="form-control" id="phone" type="number" name="phone" value="" placeholder="45649376">
                             </div>
                         </div>
                         <div class="d-flex">
                             <div class="p-2 flex-fill">
-                                <label for="email">Email</label><br>
-                                <input class ="form-control" id="email" type="text" name="email" value=""
-                                       placeholder="Indtast gyldig mailadresse">
+                                <label class="pb-1" for="email">Email</label><br>
+                                <input class ="form-control" id="email" type="text" name="email" value="" placeholder="Anders@gmail.com">
                             </div>
                         </div>
 
@@ -97,7 +102,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-sm-3"></div>
+                    <div class="col-lg-3"></div>
                 </div>
             </div>
         </form>

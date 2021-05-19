@@ -6,11 +6,13 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="FOG" />
+
+        <module name="Fog-TeamTons" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="FOG" target="8" />
+      <module name="Fog-TeamTons" target="8" />
+
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
