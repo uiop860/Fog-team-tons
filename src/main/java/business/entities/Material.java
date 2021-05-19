@@ -59,7 +59,9 @@ public class Material {
             case 2:
                 int raftersSplitter = 55;
                 amount = (int) Math.ceil(carportLength/raftersSplitter);
-                int raftersSpacing = (int)(carportLength/amount);
+                amount += 1;
+                int rafterSpacingAmount = amount - 1;
+                int raftersSpacing = (int)(carportLength/rafterSpacingAmount);
                 spacing = raftersSpacing;
                 length = (int)carportWidth;
 

@@ -1,16 +1,19 @@
 package web.commands;
 
+import business.entities.Material;
 import business.entities.OrderList;
 import business.entities.Request;
 import business.exceptions.UserException;
 import business.persistence.OrderListMapper;
 import business.services.OrderListFacade;
 import business.services.RequestFacade;
+import business.services.SVG;
 
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class FinishCommand extends Command
@@ -34,21 +37,21 @@ public class FinishCommand extends Command
         int phone;
         String email;
 
-        try{
+        /*try{*/
             carportWidthID = Integer.parseInt(request.getParameter("width"));
             carportLengthID = Integer.parseInt(request.getParameter("length"));
             name = request.getParameter("name");
             road = request.getParameter("road");
-            houseNumber = Integer.parseInt(request.getParameter("housenumber"));
-            zipCode = Integer.parseInt(request.getParameter("zipcode"));
+            houseNumber = 1; //Integer.parseInt(request.getParameter("housenumber"));
+            zipCode = 1;// Integer.parseInt(request.getParameter("zipcode"));
             city = request.getParameter("city");
-            phone = Integer.parseInt(request.getParameter("phone"));
+            phone = 1; //Integer.parseInt(request.getParameter("phone"));
             email = request.getParameter("email");
 
-        } catch (NumberFormatException e){
+        /*} catch (NumberFormatException e){
             request.setAttribute("error","Du har udfyldt forkert");
             return "orderpage";
-        }
+        }*/
 
         Request userRequest = new Request(carportWidthID,carportLengthID,name,road,houseNumber,zipCode,city,phone,email);
 
@@ -78,8 +81,37 @@ public class FinishCommand extends Command
             }
         }
 
-        orderListFacade.calculateCarport(carportWidth,carportLength,requestID);
+        OrderList orderList = orderListFacade.calculateCarport(carportWidth,carportLength,requestID);
+        List<Material> materialList = orderList.getMaterialList();
 
+
+        SVG svg = new SVG(0,0,"0 0 "+carportLength+100+" "+carportWidth+100,80,80);
+        svg.addSvg(svg);
+            svg.addRect(1,1,carportWidth-2,carportLength-2);
+            for (Material mat: materialList) {
+                switch (mat.getMaterialID()){
+                    case 1:
+                        break;
+                    case 2:
+                        for (int i = 0; i < mat.getAmount(); i++) {
+
+                            svg.addRect(mat.getSpacing()*i,0,carportWidth,4.5);
+
+
+                        }
+
+                        break;
+                    case 3:
+                        break;
+                    case 4:
+
+                }
+
+
+            }
+
+
+        request.setAttribute("svg",svg.toString());
 
         return pageToShow;
     }

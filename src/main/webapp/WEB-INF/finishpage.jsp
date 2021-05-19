@@ -15,16 +15,29 @@
                 En medarbejder vil gennemgå din forespørgsel og kontakte dig med et tilbud.
 
         </div>
+
+
+
+
+
         <div class="mt-2 col-md-18">
             <a type="button" class="btn btn-sm  btn-outline-secondary"
                href="${pageContext.request.contextPath}/fc/index">Gå til forsiden</a>
         </div>
+        <br>
+        <br>
 
-        <div class="mt-2 col-md-18">
+
+        <div>
+                ${requestScope.svg}
+        </div>
+
+
+       <%-- <div class="mt-2 col-md-18">
             <div>
             <img src="${pageContext.request.contextPath}/resources/smiley.png" alt="Smiley" width="200" height="200">
             </div>
-        </div>
+        </div>--%>
 
     </jsp:body>
 
