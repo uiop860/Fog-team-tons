@@ -90,13 +90,40 @@ public class FinishCommand extends Command
         List<Material> materialList = orderList.getMaterialList();
 
 //TODO: MÅL, Sidste 3 markers
-        SVG svg = new SVG(0, 0, "0 0 " + (carportLength + 100) + " " + (carportWidth + 100), 80, 80);
+        SVG svg = new SVG(0, 0, "0 0 " + (carportLength+10) +" " + (carportWidth+10) , 70, 70);
+        //Initiate end of line markers
         svg.initiateMarkers();
-        svg.addMarkerLine(20, 17, 20, (carportWidth-15));
-        svg.addLine(15, 11, 50, 11);
-        svg.addLine(15, (carportWidth-9), 50,(carportWidth-9));
+
+        //Add outer vertical line
+        double endOfOL = (carportWidth-7) * 0.7;
+        svg.addMarkerLine(20, 7, 20, endOfOL);
+        svg.addLine(20, 1, 30, 1);
+        svg.addLine(20, carportWidth*0.7, 30, carportWidth*0.7);
+        svg.addVerticalText(15,(carportWidth/2) * 0.7,(int) carportWidth);
+
+        //add inner vertical line
+        double endOfIL = (carportWidth-42)*0.7;
+        double startOfIL = 42*0.7;
+        double firstLine = 34*0.7;
+        double secondLine = (carportWidth-35)*0.7;
+        svg.addMarkerLine(50, startOfIL, 50, endOfIL);
+        svg.addLine(50, firstLine, 60, firstLine);
+        svg.addLine(50, secondLine, 60, secondLine);
+        svg.addVerticalText(45, (carportWidth/2) * 0.7, (int) carportWidth-70);
+
+        //add horizontal lines
+        double horiLineY = (carportWidth+50)*0.7;
+        double endOfHoriLine = (carportLength+94)*0.7;
+        svg.addMarkerLine(82, horiLineY, endOfHoriLine, horiLineY);
+        svg.addLine(76,(carportWidth+40)*0.7,76, horiLineY);
+        svg.addLine(endOfHoriLine+6, (carportWidth+40)*0.7, endOfHoriLine+6, horiLineY );
+        svg.addHorizontalText((carportLength+76)/2,horiLineY-5, (int) carportLength );
+
+
+
+
 //        svg.addLine(10, 50, 20, 500);
-        SVG innerSVG = new SVG(75, 10,"0 0 " + (carportLength+10) +" " + (carportWidth+10),80, 80 );
+        SVG innerSVG = new SVG(75, 0,"0 0 " + (carportLength+10) +" " + (carportWidth+10),70, 70 );
         innerSVG.addRect(1, 1, carportWidth, carportLength);
         for (Material mat : materialList)
         {
@@ -117,17 +144,18 @@ public class FinishCommand extends Command
                     }
 
 
-                    innerSVG.addRect(0, 35, 4.5, carportLength); //Beam 1
-                    innerSVG.addRect(0, (carportWidth - 39.5), 4.5, carportLength); //Beam 2
+                    innerSVG.addRect(1, 35, 4.5, carportLength); //Beam 1
+                    innerSVG.addRect(1, (carportWidth - 39.5), 4.5, carportLength); //Beam 2
                     break;
 
                 case 2:
-                    for (int i = 0; i < mat.getAmount(); i++)
+                    innerSVG.addRect(1,1, carportWidth, 4.5);
+                    for (int i = 1; i < mat.getAmount(); i++)
                     {
 
                         if ((mat.getSpacing() * i) >= carportLength)
                         {
-                            innerSVG.addRect((mat.getSpacing() * i) - 4.5, 1, carportWidth, 4.5);
+                            innerSVG.addRect((mat.getSpacing() * i), 1, carportWidth, 4.5);
                         }
                         else
                         {

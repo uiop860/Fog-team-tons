@@ -48,8 +48,11 @@ public class SVG
 
     private final String markerLine = "<line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\"\n" +
             "              style=\"stroke: #000000;\n" +
-            "\tmarker-end: url(#endArrow); marker-start: url(#beginArrow);\"\"/>";
+            "\tmarker-end: url(#endArrow); marker-start: url(#beginArrow);\"/>";
 
+    private final String verticalText = "<text style=\"text-anchor: middle; font-size: small\" transform=\"translate(%f,%f) rotate(-90)\">%d cm</text>";
+
+    private final String horizontalText = "<text style=\"text-anchor: middle; font-size: small\" transform=\"translate(%f,%f)\">%d cm</text>";
 
 
 
@@ -64,9 +67,9 @@ public class SVG
         svg.append(String.format(headerTemplate, height, width, viewBox, x, y) + "\n");
     }
 
-    public void addRect(double x, double y, double height, double width)
+    public void addRect(double x, double y, double width, double length)
     {
-        svg.append(String.format(rectTemplate, x, y, height, width) + "\n");
+        svg.append(String.format(rectTemplate, x, y, width, length) + "\n");
     }
 
     public void addOpacityRect(double x, double y, double height, double width, double opacity)
@@ -92,6 +95,16 @@ public class SVG
     public void initiateMarkers()
     {
         svg.append(markerTemplate);
+    }
+
+    public void addVerticalText(double x, double y, int width)
+    {
+        svg.append(String.format(verticalText, x, y, width));
+    }
+
+    public void addHorizontalText(double x, double y, int length)
+    {
+        svg.append(String.format(horizontalText, x, y, length));
     }
 
 
