@@ -11,7 +11,7 @@ public class Material {
     private int length;
     private String category;
     private double totalPrice;
-    private int spacing = 0;
+    private double spacing = 0;
     private int lastRoofPlateWidth = 0;
 
     public Material(int materialID, String name, String description, String unit, double price, String category) {
@@ -60,8 +60,8 @@ public class Material {
                 int raftersSplitter = 55;
                 amount = (int) Math.ceil(carportLength/raftersSplitter);
                 amount += 1;
-                int rafterSpacingAmount = amount - 1;
-                int raftersSpacing = (int)(carportLength/rafterSpacingAmount);
+                double rafterSpacingAmount = amount - 1;
+                double raftersSpacing = (carportLength/rafterSpacingAmount);
                 spacing = raftersSpacing;
                 length = (int)carportWidth;
 
@@ -103,11 +103,11 @@ public class Material {
 
     /** getters and setters **/
 
-    public int getSpacing() {
+    public double getSpacing() {
         return spacing;
     }
 
-    public void setSpacing(int spacing) {
+    public void setSpacing(double spacing) {
         this.spacing = spacing;
     }
 

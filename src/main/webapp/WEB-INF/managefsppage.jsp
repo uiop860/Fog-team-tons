@@ -141,29 +141,8 @@
                           style="stroke: #000000;
 	marker-start: url(#beginArrow);
 	marker-end: url(#endArrow);"/>
-                    <defs>
-                        <marker
-                                id="beginArrow"
-                                markerWidth="12"
-                                markerHeight="12"
-                                refX="5"
-                                refY="5"
-                                orient="auto">
-                            <path d="M0,6 L12,0 L12,12 L0,6" style="fill: #000000;"/>
-                        </marker>
-                        <marker
-                                id="endArrow"
-                                markerWidth="12"
-                                markerHeight="12"
-                                refX="5"
-                                refY="5"
-                                orient="auto">
-                            <path d="M0,0 L12,6 L0,12 L0,0 " style="fill: #000000;"/>
-                        </marker>
-                    </defs>
 
-                    <line x1="80" y1="650" x2="800" y2="650" style="stroke: #000000; marker-start: url(#beginArrow);
-	marker-end: url(#endArrow);"></line>
+                    <line x1="80" y1="650" x2="800" y2="650" style="stroke: #000000; marker-start: url(#beginArrow); marker-end: url(#endArrow);"></line>
                     <text style="text-anchor: middle" transform="translate(30,300) rotate(-90)">600 cm</text>
                     <text style="text-anchor: middle" transform="translate(450,670)">800 cm</text>
 
