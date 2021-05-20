@@ -113,7 +113,6 @@ public class FinishCommand extends Command
                         {
                             innerSVG.addRect(((mat.getSpacing()*i)+100), 32.4, 9.7, 9.7);
                             innerSVG.addRect(((mat.getSpacing()*i)+100), (carportWidth-42.1), 9.7, 9.7);
-
                         }
                     }
 
