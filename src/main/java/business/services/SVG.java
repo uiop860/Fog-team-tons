@@ -17,7 +17,11 @@ public class SVG
             "y=\"%d\"   " +
             " preserveAspectRatio=\"xMinYMin\">";
 
+    private final String StripedLineTemplate = "<line x1=\"%d\" x2=\"%d\" y1=\"%d\" y2=\"%d\" stroke=\"#000000\" stroke-witdh=\"%d\" stroke-linecap=\"square\" stroke-dasharray=\"1 3\"/>";
+
     private final String rectTemplate = "<rect x=\"%f\" y=\"%f\" height=\"%f\" width=\"%f\" style=\"stroke:#000000; fill: #ffffff\" />";
+
+    private final String LineTemplate = "<Line x1=\"%d\" x2=\"%d\" y1=\"%d\" y2=\"%d\" stroke=\"#000000\"/>";
 
     public SVG(int x, int y, String viewBox, int width, int height)
     {
@@ -33,6 +37,17 @@ public class SVG
     {
         svg.append(String.format(rectTemplate, x, y, height, width)+"\n");
     }
+
+    public void addStripedLine(int x1, int x2, int y1, int y2, int strokeWidth)
+    {
+        svg.append(String.format(StripedLineTemplate, x1, x2, y1, y2, strokeWidth));
+    }
+
+    public void addLine(int x1, int x2, int y1, int y2)
+    {
+        svg.append(String.format(LineTemplate, x1, x2, y1, y2));
+    }
+
 
     public void addSvg(SVG innerSVG)
     {
