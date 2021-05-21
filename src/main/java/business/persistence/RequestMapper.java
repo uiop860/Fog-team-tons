@@ -1,6 +1,7 @@
 package business.persistence;
 
 
+import business.entities.Material;
 import business.entities.MaterialListItem;
 import business.entities.Request;
 import business.exceptions.UserException;
@@ -212,6 +213,38 @@ public class RequestMapper {
             throwables.printStackTrace();
         }
         return materialList;
+    }
+    public List<Material> getDrawingfromDB (int requestID) throws UserException
+    {
+        List<Material> drawingList = new ArrayList<>();
+        try(Connection connection = database.connect())
+        {
+            String sql ="SELECT * FROM fog_db.orderlist INNER JOIN fog_db.material ON orderlist.material_id=material.material_id WHERE request_id =?;";
+
+            try(PreparedStatement ps = connection.prepareStatement(sql))
+            {
+
+                ps.setInt(1, requestID);
+                ResultSet rs = ps.executeQuery();
+                while(rs.next())
+                {
+                    int id = rs.getInt("material_id");
+                    int amount = rs.getInt("amount");
+                    double total_material_price = rs.getDouble("total_material_price");
+                    double price = rs.getDouble("price");
+                    String material_name = rs.getString("material_name");
+                    String description = rs.getString("description");
+
+//                    total_material_price = Double.parseDouble(new DecimalFormat("#.##").format(total_material_price));
+                    drawingList.add(new Material(id, material_name, description, "Stk", price, "Træ" ));
+                }
+                return drawingList;
+            }
+        } catch (SQLException throwables)
+        {
+            throwables.printStackTrace();
+        }
+        return drawingList;
     }
 
 }

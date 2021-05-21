@@ -13,10 +13,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
-public class ManageFSPCommand extends CommandProtectedPage
+public class PrintCommand extends CommandProtectedPage
 {
     RequestFacade requestFacade;
-    public ManageFSPCommand(String pageToShow, String role)
+    public PrintCommand(String pageToShow, String role)
     {
         super(pageToShow, role);
         this.requestFacade = new RequestFacade(database);
@@ -25,8 +25,7 @@ public class ManageFSPCommand extends CommandProtectedPage
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException
     {
-        //henter listen
-        int id = Integer.parseInt(request.getParameter("manageRequest"));
+        int id = Integer.parseInt(request.getParameter("printID"));
         Request request1 = requestFacade.getRequestFromID(id);
         List<Material> drawingList = requestFacade.getDrawingfromDB(id);
         for (Material mat: drawingList)
@@ -41,9 +40,11 @@ public class ManageFSPCommand extends CommandProtectedPage
         request.setAttribute("SVG", svg.toString());
         request.setAttribute("sideSvg", sideSVG.toString());
 
-       request.setAttribute("request", request1);
-       List<MaterialListItem> materialList = requestFacade.getMaterialList(id);
-       request.setAttribute("materialList", materialList);
+        request.setAttribute("request", request1);
+        List<MaterialListItem> materialList = requestFacade.getMaterialList(id);
+        request.setAttribute("materialList", materialList);
+
+
         return pageToShow;
     }
 }
