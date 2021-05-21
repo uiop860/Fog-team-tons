@@ -1,5 +1,6 @@
 package business.services;
 
+import business.entities.Material;
 import business.entities.MaterialListItem;
 import business.entities.Request;
 import business.exceptions.UserException;
@@ -52,5 +53,12 @@ public class RequestFacade {
         List<MaterialListItem> materialList = requestMapper.getMaterialList(requestID);
         return materialList;
     }
+
+    public List<Material> getDrawingfromDB (int requestID) throws UserException
+    {
+        List<Material> drawingList = requestMapper.getDrawingfromDB(requestID);
+        return drawingList;
+    }
+
 
 }
