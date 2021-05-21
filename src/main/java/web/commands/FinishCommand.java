@@ -179,7 +179,73 @@ public class FinishCommand extends Command
 
         }
 
-//            svg.addStripedLine((materialList.get(1).getSpacing()+4.5),carportLength - materialList.get(1).getSpacing(),35, (carportWidth-35);
+
+        
+        SVG sideSVG = new SVG(0, 0, "0 0 " + (carportLength+150) + " 350", 70, 70);
+
+
+
+        for(Material mat: materialList)
+        {
+            if(mat.getMaterialID() == 1)
+            {
+
+                if(mat.getAmount() >= 4)
+                {
+                    for (int i = 0; i < (mat.getAmount()/2); i++)
+                    {
+                        sideSVG.addRect(((mat.getSpacing()*i)+100)+100, 40, mat.getLength()-110, 9.7 );
+                        if(i == 1)
+                        {
+                            sideSVG.addMarkerLine(206, 260, mat.getSpacing() * i + 194, 260);
+                            sideSVG.addHorizontalText(((mat.getSpacing()*i+200)/2)+(100*i), 255, (int)mat.getSpacing());
+                        }
+                        else if(i > 1)
+                        {
+                            sideSVG.addMarkerLine(mat.getSpacing()*(i-1)+206, 260, mat.getSpacing() * i + 194, 260);
+                            sideSVG.addHorizontalText(((mat.getSpacing()*i+200)/2)+(100*i), 255, (int)mat.getSpacing());
+                        }
+                    }
+                }
+            }
+        }
+
+        sideSVG.addLine(100, 0, carportLength+100, 10);
+        sideSVG.addLine(100, 0, 100, 20);
+
+
+        sideSVG.addLine(100, 20,100, 40);
+//        sideSVG.addLine(0, 20, carportLength, 30);
+        sideSVG.addLine(100, 40, carportLength+100, 40);
+        sideSVG.addLine(carportLength+100, 20, carportLength+100, 40);
+
+
+        sideSVG.addLine(100, 20, carportLength+100, 30);
+        sideSVG.addLine(carportLength+100, 10, carportLength+100, 30);
+
+
+
+        sideSVG.addLine(100, 230, carportLength+100, 230);
+
+        sideSVG.initiateMarkers();
+        //Outer left
+        sideSVG.addMarkerLine(50, 6, 50, 224);
+        sideSVG.addVerticalText(45, 115, 230);
+        //Inner left
+        sideSVG.addMarkerLine(75, 26, 75, 224);
+        sideSVG.addVerticalText(70, 115, 210);
+        //Right
+        sideSVG.addMarkerLine(carportLength+125, 16, carportLength+125, 224);
+        sideSVG.addVerticalText(carportLength+120, 115, 220);
+        //Down left
+        sideSVG.addMarkerLine(106, 260, 194, 260);
+        sideSVG.addHorizontalText(150, 255, 100);
+        //Down middle
+//        sideSVG.addMarkerLine(206, 260, 434, 260);
+//
+
+
+        request.setAttribute("sideSVG", sideSVG.toString());
         svg.addSvg(innerSVG);
         request.setAttribute("svg", svg.toString());
 

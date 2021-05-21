@@ -29,7 +29,9 @@
 
 
         <div>
-                ${requestScope.svg}
+                ${requestScope.svg} <br>
+
+            ${requestScope.sideSVG}
         </div>
 
 
