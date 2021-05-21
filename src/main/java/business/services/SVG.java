@@ -11,11 +11,11 @@ public class SVG
     private int height;
 
     private final String headerTemplate = "<svg height=\"%d%%\" " +
-            "width=\"%d%%\" " +
-            "viewBox=\"%s\" " +
-            "x=\"%d\"   " +
-            "y=\"%d\"   " +
-            " preserveAspectRatio=\"xMinYMin\">";
+                                          "width=\"%d%%\" " +
+                                          "viewBox=\"%s\" " +
+                                          "x=\"%d\"   " +
+                                          "y=\"%d\"   " +
+                                          " preserveAspectRatio=\"xMinYMin\">";
 
     private final String StripedLineTemplate = "<line x1=\"%f\" x2=\"%f\" y1=\"%f\" y2=\"%f\" stroke=\"#000000\" stroke-width=\"%d\" stroke-linecap=\"square\" stroke-dasharray=\"3 3 2 3\"/>";
 
@@ -53,6 +53,8 @@ public class SVG
     private final String verticalText = "<text style=\"text-anchor: middle; font-size: small\" transform=\"translate(%f,%f) rotate(-90)\">%d cm</text>";
 
     private final String horizontalText = "<text style=\"text-anchor: middle; font-size: small\" transform=\"translate(%f,%f)\">%d cm</text>";
+
+    private final String horizontalTextSmall = "<text style=\"text-anchor: middle; font-size: x-small\" transform=\"translate(%f,%f)\">%d cm</text>";
 
 
 
@@ -105,6 +107,11 @@ public class SVG
     public void addHorizontalText(double x, double y, int length)
     {
         svg.append(String.format(horizontalText, x, y, length));
+    }
+
+    public void addHorizontalTextSmall(double x, double y, int length){
+        svg.append(String.format(horizontalTextSmall,x,y,length));
+
     }
 
 
