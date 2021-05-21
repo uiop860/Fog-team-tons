@@ -14,7 +14,20 @@
 
     <jsp:body>
         <div>
-            <button class="noprint btn btn-primary pt-3 pb-3" onclick="window.print()">Print eller gem side</button>
+            <div class="row">
+                <div class="col-sm-4"></div>
+            <div class="col-sm-2 pt-3 pb-3 ">
+            <button class="noprint btn btn-primary" onclick="window.print()">Print eller gem side</button>
+            </div>
+            <div class="col-sm-2 pt-3 pb-3 ">
+                <form action="${pageContext.request.contextPath}/fc/managefsp" method="post">
+                    <button name="manageRequest" value="${requestScope.request.requestID}" class="noprint btn btn-primary">Gå tilbage</button>
+                </form>
+            </div>
+                <div class="col-sm-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4"></div>
             <div class="col-md-4">
                 <table class="table">
                     <thead>
@@ -35,7 +48,9 @@
                 <h3 class="text-center">Total pris: ${requestScope.request.total_price} kr.</h3>
 
             </div>
-            <div class="col-md-8">
+                <div class="col-sm-4"></div>
+            </div>
+
                 <div class="pb-3">
                     <div class="card">
                         <div class="card-header text-center bg-primary">
@@ -59,7 +74,7 @@
                             ${requestScope.sideSvg}
                     </div>
                 </div>
-            </div>
+
 
         </div>
 
