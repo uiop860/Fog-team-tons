@@ -23,7 +23,7 @@ public class SVG
 
     private final String rectOpacityTemplate = "<rect x=\"%f\" y=\"%f\" height=\"%f\" width=\"%f\" style=\"stroke:#000000; fill-opacity=\"%f\" />";
 
-    private final String LineTemplate = "<Line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke=\"#000000\"/>";
+    private final String LineTemplate = "<Line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke=\"#000000\" stroke-width=\"0.5\"/>";
 
     private final String markerTemplate = "<defs>\n" +
             "                        <marker\n" +
