@@ -76,6 +76,10 @@
                     </c:forEach>
                 </table>
                 <h3 class="text-center">Total pris: ${requestScope.request.total_price} kr.</h3>
+                <form action="${pageContext.request.contextPath}/fc/print" method="post">
+
+                    <button name="printID" value="${requestScope.request.requestID}" class="btn btn-primary text-light" type="submit">Print tilbud</button>
+                </form>
             </div>
             <div class="col-md-8">
                 <div class="pb-3">

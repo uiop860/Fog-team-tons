@@ -34,6 +34,7 @@ public abstract class Command
         commands.put("adminpage", new AdminCommand("adminpage", "admin"));
         commands.put("managefsp", new ManageFSPCommand("managefsppage", "employee"));
         commands.put("takefsp", new TakeFSPCommand("managefsppage", "employee"));
+        commands.put("print", new PrintCommand("printpage", "employee"));
     }
 
     public static Command fromPath(
