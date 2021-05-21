@@ -14,9 +14,7 @@
 
     <jsp:body>
         <div class="row pt-5">
-            <div class="col-lg-3">
-
-            </div>
+            <div class="col-lg-3"></div>
             <div class="col-lg-6">
                 <div class="fs-1 pb-5 text-primary text-center">
                     Skræddersyet carport

@@ -9,25 +9,26 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div    class="mt-2 col-md-18">
-            <h2>Tak for din henvendelse!</h2>
-                Vi kontakter dig hurtigst muligt angående din personlige carport.
-                En medarbejder vil gennemgå din forespørgsel og kontakte dig med et tilbud.
 
+        <div class="row pt-5 pb-5">
+            <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <div class="mt-2 col-md-18">
+                        <div class="fs-1 pb-5 text-primary text-center">
+                            Tak for din henvendelse!
+                        </div>
+                        <div class="fs-5">
+                            Vi kontakter dig hurtigst muligt angående din personlige carport.
+                            <br>
+                            En medarbejder vil gennemgå din forespørgsel og kontakte dig med et tilbud.
+                            <br>
+                            Her har du en nogle skitser over den carport vi har beregnet til dig.
+                        </div>
+                    </div>
+
+                </div>
+            <div class="col-lg-3"></div>
         </div>
-
-
-
-
-
-        <div class="mt-2 col-md-18">
-            <a type="button" class="btn btn-sm  btn-outline-secondary"
-               href="${pageContext.request.contextPath}/fc/index">Gå til forsiden</a>
-        </div>
-        <br>
-        <br>
-
-
         <div class="pb-3">
             <div class="card">
                 <div class="card-header text-center bg-primary">
@@ -51,13 +52,10 @@
                     ${requestScope.sideSVG}
             </div>
         </div>
-
-
-       <%-- <div class="mt-2 col-md-18">
-            <div>
-            <img src="${pageContext.request.contextPath}/resources/smiley.png" alt="Smiley" width="200" height="200">
-            </div>
-        </div>--%>
+        <div class="mt-2 col-md-18">
+            <a type="button" class="btn btn-outline-primary"
+               href="${pageContext.request.contextPath}/fc/index">Gå til forsiden</a>
+        </div>
 
     </jsp:body>
 
