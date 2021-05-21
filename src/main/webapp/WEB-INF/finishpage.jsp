@@ -28,10 +28,28 @@
         <br>
 
 
-        <div>
-                ${requestScope.svg} <br>
+        <div class="pb-3">
+            <div class="card">
+                <div class="card-header text-center bg-primary">
+                    <div class="fs-2 text-light">
+                        Skitse ovenfra
+                    </div>
+                </div>
+                <div class="pt-4">
+                        ${requestScope.svg}
+                </div>
+            </div>
+        </div>
 
-            ${requestScope.sideSVG}
+        <div class="card">
+            <div class="card-header text-center bg-primary">
+                <div class="fs-2 text-light">
+                    Skitse fra siden
+                </div>
+            </div>
+            <div class="pt-4">
+                    ${requestScope.sideSVG}
+            </div>
         </div>
 
 

@@ -10,14 +10,15 @@ public class SVGDrawerFacade {
     private OrderList orderList;
     private double carportLength;
     private double carportWidth;
+    private List<Material> materialList;
 
     public SVGDrawerFacade(OrderList orderList, double carportLength, double carportWidth) {
         this.orderList = orderList;
         this.carportLength = carportLength;
         this.carportWidth = carportWidth;
+        this.materialList = orderList.getMaterialList();
     }
 
-    List<Material> materialList = orderList.getMaterialList();
     public SVG drawSVGCarport(){
 
 
@@ -106,7 +107,7 @@ public class SVGDrawerFacade {
     }
     public SVG drawSideSVG()
     {
-        SVG sideSVG = new SVG(0, 0, "0 0 " + (carportLength+150) + " 350", 70, 70);
+        SVG sideSVG = new SVG(0, 0, "0 0 " + (carportLength+150) + " 280", 100, 100);
 
 
 
