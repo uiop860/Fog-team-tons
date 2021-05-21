@@ -28,7 +28,7 @@ public class CarportCalculatorTest {
 
     @Test
     public void calculateRafters() {
-        material = new Material(1, "45x195 mm. spærtræ ubh.", "Spær, monteres på rem", "Stk", 0.8495, "Træ");
+        material = new Material(2, "45x195 mm. spærtræ ubh.", "Spær, monteres på rem", "Stk", 0.8495, "Træ");
         material.calculateRafters(carportWidth,carportLength);
         Assertions.assertEquals(9,material.getAmount());
         Assertions.assertEquals(52.5,material.getSpacing());
@@ -37,7 +37,7 @@ public class CarportCalculatorTest {
 
     @Test
     public void calculateRoof() {
-        material = new Material(1, "Plastmo Ecolite blåtonet", "Tagplader monteres på spær", "Stk", 0.4166, "Træ");
+        material = new Material(3, "Plastmo Ecolite blåtonet", "Tagplader monteres på spær", "Stk", 0.4166, "Træ");
         material.calculateRoof(carportWidth,carportLength);
         Assertions.assertEquals(7,material.getAmount());
         Assertions.assertEquals(90,material.getLastRoofPlateWidth());
@@ -46,7 +46,7 @@ public class CarportCalculatorTest {
 
     @Test
     public void calculateBeamOnLongSide() {
-        material = new Material(1, "45x195 mm. spærtræ ubh.", "Remme på langsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
+        material = new Material(4, "45x195 mm. spærtræ ubh.", "Remme på langsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
         material.calculateBeamOnLongSide(carportLength);
         Assertions.assertEquals(2,material.getAmount());
         Assertions.assertEquals(713.58,material.getTotalPrice());
@@ -54,7 +54,7 @@ public class CarportCalculatorTest {
 
     @Test
     public void calculateBeamOnBroadSide() {
-        material = new Material(1, "45x195 mm. spærtræ ubh.", "Remme på bredsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
+        material = new Material(5, "45x195 mm. spærtræ ubh.", "Remme på bredsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
         material.calculateBeamOnLongSide(carportLength);
         Assertions.assertEquals(2,material.getAmount());
         Assertions.assertEquals(713.58,material.getTotalPrice());
