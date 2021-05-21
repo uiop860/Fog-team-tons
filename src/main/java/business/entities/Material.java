@@ -1,5 +1,7 @@
 package business.entities;
 
+import java.text.DecimalFormat;
+
 public class Material {
 
     private int materialID;
@@ -27,80 +29,93 @@ public class Material {
     public void calculateAmountAndPrice(double carportWidth, double carportLength){
 
         switch (materialID){
-            case 1:
-                double lengthAfterMinus = carportLength-120;
-                int postSplitter = 310;
-                int cornerPosts = 2;
-                int postSpacing;
-                int postLength = 300; //default value of posts
-
-                if (lengthAfterMinus < postSplitter * 2 && lengthAfterMinus > postSplitter) {
-                    amount = 1;
-
-                }else if(lengthAfterMinus < postSplitter * 3 && lengthAfterMinus > postSplitter * 2){
-                    amount = 2;
-                }
-
-                if(amount == 0){
-                    postSpacing = (int)lengthAfterMinus;
-                } else {
-                    postSpacing =  (int)lengthAfterMinus/(amount+1);
-                }
-
-                spacing = postSpacing;
-                amount += cornerPosts;
-                amount *= 2;
-                length = postLength;
-
-                totalPrice = (length*price)*amount;
-
+            case 1: //materialID = 1 = pole
+                calculatePole(carportLength);
                 break;
 
-            case 2:
-                int raftersSplitter = 55;
-                amount = (int) Math.ceil(carportLength/raftersSplitter);
-                amount += 1;
-                double rafterSpacingAmount = amount - 1;
-                double raftersSpacing = (carportLength/rafterSpacingAmount);
-                spacing = raftersSpacing;
-                length = (int)carportWidth;
-
-                totalPrice = (length*price)*amount;
-
+            case 2: //materialID = 2 = raft
+                calculateRafters(carportWidth,carportLength);
                 break;
 
-            case 3:
-                int roofPlateSplitter = 100;
-                amount =  (int)Math.ceil(carportWidth/roofPlateSplitter);
-                lastRoofPlateWidth = (int)carportWidth % roofPlateSplitter;
-                length = (int)carportLength;
-
-                totalPrice = (length*price)*amount;
-
+            case 3: //materialID = 3 = roof
+                calculateRoof(carportWidth,carportLength);
                 break;
 
-            case 4:
-                int beamAmountOnLongSide = 2; //hvis carporten er firkantet er der altid 2
-                amount = beamAmountOnLongSide;
-                length = (int)carportLength;
-
-                totalPrice = (length*price)*amount;
-
+            case 4: //materialID = 4 = beam on long side
+                calculateBeamOnLongSide(carportLength);
                 break;
-            case 5:
-                int beamAmountOnBroadSide = 2; //hvis carporten er firkantet er der altid 2
-                amount = beamAmountOnBroadSide;
-                length = (int)carportWidth;
 
-                totalPrice = (length*price)*amount;
-
+            case 5: //materialID = 4 = beam on broadside
+                calculateBeamOnBroadSide(carportWidth);
                 break;
         }
     }
 
+    public void calculatePole(double carportLength){
+        double lengthAfterMinus = carportLength-120;
+        int postSplitter = 310;
+        int cornerPosts = 2;
+        int postSpacing;
+        int postLength = 300; //default value of posts
 
+        if (lengthAfterMinus < postSplitter * 2 && lengthAfterMinus > postSplitter) {
+            amount = 1;
 
+        }else if(lengthAfterMinus < postSplitter * 3 && lengthAfterMinus > postSplitter * 2){
+            amount = 2;
+        }
 
+        if(amount == 0){
+            postSpacing = (int)lengthAfterMinus;
+        } else {
+            postSpacing =  (int)lengthAfterMinus/(amount+1);
+        }
+
+        spacing = postSpacing;
+        amount += cornerPosts;
+        amount *= 2;
+        length = postLength;
+
+        totalPrice = (length*price)*amount;
+    }
+
+    public void calculateRafters(double carportWidth, double carportLength ){
+        int raftersSplitter = 55;
+        amount = (int) Math.ceil(carportLength/raftersSplitter);
+        amount += 1;
+        double rafterSpacingAmount = amount - 1;
+        double raftersSpacing = (carportLength/rafterSpacingAmount);
+        spacing = raftersSpacing;
+        length = (int)carportWidth;
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
+
+    }
+
+    public void calculateRoof(double carportWidth, double carportLength){
+        int roofPlateSplitter = 100;
+        amount =  (int)Math.ceil(carportWidth/roofPlateSplitter);
+        lastRoofPlateWidth = (int)carportWidth % roofPlateSplitter;
+        length = (int)carportLength;
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
+    }
+
+    public void calculateBeamOnLongSide(double carportLength){
+        int beamAmountOnLongSide = 2; //hvis carporten er firkantet er der altid 2
+        amount = beamAmountOnLongSide;
+        length = (int)carportLength;
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
+    }
+
+    public void calculateBeamOnBroadSide(double carportWidth){
+        int beamAmountOnBroadSide = 2; //hvis carporten er firkantet er der altid 2
+        amount = beamAmountOnBroadSide;
+        length = (int)carportWidth;
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
+    }
 
 
     /** getters and setters **/

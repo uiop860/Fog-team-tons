@@ -1,174 +1,62 @@
 package business.persistence;
 
 import business.entities.Material;
-import business.entities.OrderList;
-import business.exceptions.UserException;
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.List;
 
 public class CarportCalculatorTest {
 
-    static int length;
-    static double width;
-    private final static String USER = "managesql";
-    private final static String PASSWORD = "tt420";
-    private final static String URL = "jdbc:mysql://206.81.26.54:3306/fog_db?serverTimezone=CET";
-    private static Database database;
+    public int carportLength;
+    public int carportWidth;
+    public Material material;
 
-    @BeforeAll
-    static void setUpParameters() throws ClassNotFoundException {
-
-        length = 500;
-        width = 240;
-        database = new Database(USER,PASSWORD,URL);
-
+    @BeforeEach
+    public void prepareTest() {
+        carportLength = 420;
+        carportWidth = 690;
     }
 
     @Test
-    public void stolpeBeregner(){
-
-        int lengthAfterMinus = length-120;
-        int stolpeSplitter = 310;
-        int antalStolper = 0;
-        int hjørneStolper = 2;
-        int stolpeMellemrum;
-
-        if (lengthAfterMinus < stolpeSplitter * 2 && lengthAfterMinus > stolpeSplitter) {
-            antalStolper = 1;
-
-        }else if(lengthAfterMinus < stolpeSplitter * 3 && lengthAfterMinus > stolpeSplitter * 2){
-            antalStolper = 2;
-        }
-
-        if(antalStolper == 0){
-            stolpeMellemrum = lengthAfterMinus;
-        } else {
-            stolpeMellemrum =  lengthAfterMinus/(antalStolper+1);
-        }
-
-        antalStolper += hjørneStolper;
-        antalStolper *= 2;
-
-        Assertions.assertEquals(6,antalStolper);
-
+    public void testCalculatePole() {
+        material = new Material(1, "97x97 mm. trykimp. Stolpe", "97x97 mm. trykimp. Stolpe", "Stk", 0.35, "Træ");
+        material.calculatePole(carportLength);
+        Assertions.assertEquals(4,material.getAmount());
+        Assertions.assertEquals(300,material.getSpacing());
+        Assertions.assertEquals(420,material.getTotalPrice());
     }
 
     @Test
-    public void stolpeMellemrumBeregner(){
-
-        int lengthAfterMinus = length-120;
-        int stolpeSplitter = 310;
-        int antalStolper = 0;
-        int hjørneStolper = 2;
-        int stolpeMellemrum;
-
-        if (lengthAfterMinus < stolpeSplitter * 2 && lengthAfterMinus > stolpeSplitter) {
-            antalStolper = 1;
-
-        }else if(lengthAfterMinus < stolpeSplitter * 3 && lengthAfterMinus > stolpeSplitter * 2){
-            antalStolper = 2;
-        }
-
-        if(antalStolper == 0){
-            stolpeMellemrum = lengthAfterMinus;
-        } else {
-            stolpeMellemrum =  lengthAfterMinus/(antalStolper+1);
-        }
-
-        antalStolper += hjørneStolper;
-        antalStolper *= 2;
-
-        Assertions.assertEquals(190,stolpeMellemrum);
-
+    public void calculateRafters() {
+        material = new Material(1, "45x195 mm. spærtræ ubh.", "Spær, monteres på rem", "Stk", 0.8495, "Træ");
+        material.calculateRafters(carportWidth,carportLength);
+        Assertions.assertEquals(9,material.getAmount());
+        Assertions.assertEquals(52.5,material.getSpacing());
+        Assertions.assertEquals(5275.39,material.getTotalPrice());
     }
 
     @Test
-    public void spærBeregner(){
-
-        int spærSplitter = 55;
-        double antalSpær = 0;
-
-        antalSpær = Math.ceil(length/spærSplitter);
-
-        int spærMellemrum = (int) (length/antalSpær);
-
-
-        Assertions.assertEquals(9,antalSpær);
-
-
+    public void calculateRoof() {
+        material = new Material(1, "Plastmo Ecolite blåtonet", "Tagplader monteres på spær", "Stk", 0.4166, "Træ");
+        material.calculateRoof(carportWidth,carportLength);
+        Assertions.assertEquals(7,material.getAmount());
+        Assertions.assertEquals(90,material.getLastRoofPlateWidth());
+        Assertions.assertEquals(1224.8,material.getTotalPrice());
     }
 
     @Test
-    public void spærMellemrumBeregner(){
-
-        int spærSplitter = 55;
-        double antalSpær = 0;
-
-        antalSpær = Math.ceil(length/spærSplitter);
-
-        int spærMellemrum = (int) (length/antalSpær);
-
-
-        Assertions.assertEquals(48,spærMellemrum);
-
+    public void calculateBeamOnLongSide() {
+        material = new Material(1, "45x195 mm. spærtræ ubh.", "Remme på langsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
+        material.calculateBeamOnLongSide(carportLength);
+        Assertions.assertEquals(2,material.getAmount());
+        Assertions.assertEquals(713.58,material.getTotalPrice());
     }
 
     @Test
-    public void tagpladeBeregner(){
-
-        double tapladeSplitter = 100;
-        double antalTagplader;
-        int sidsteTagpladeWidth;
-
-        antalTagplader = Math.ceil(width/tapladeSplitter);
-
-        System.out.println(antalTagplader);
-
-        /*sidsteTagpladeWidth = width % tapladeSplitter;*/
-
-        Assertions.assertEquals(3,antalTagplader);
-
+    public void calculateBeamOnBroadSide() {
+        material = new Material(1, "45x195 mm. spærtræ ubh.", "Remme på bredsiden, sadles ned i stolper", "Stk", 0.8495, "Træ");
+        material.calculateBeamOnLongSide(carportLength);
+        Assertions.assertEquals(2,material.getAmount());
+        Assertions.assertEquals(713.58,material.getTotalPrice());
     }
-
-    /*@Test
-    public void sidsteTagpladeBeregner(){
-
-        int tapladeSplitter = 100;
-        double antalTagplader;
-        int sidsteTagpladeWidth;
-
-        antalTagplader = Math.ceil(width/tapladeSplitter);
-
-        sidsteTagpladeWidth = width % tapladeSplitter;
-
-        Assertions.assertEquals(20,sidsteTagpladeWidth);
-
-    }
-
-    @Test
-    public void calculateCarport() throws UserException, SQLException {
-
-        Connection connection = database.connect();
-
-        System.out.println(connection.isValid(10));
-
-        OrderListMapper orderListMapper = new OrderListMapper(database);
-
-        OrderList orderList = orderListMapper.calculateCarport(width,length,1);
-
-        List<Material> materialList = orderList.getMaterialList();
-
-        for (Material i: materialList) {
-
-            System.out.print(i.getName()+" ");
-            System.out.print(i.getTotalPrice());
-            System.out.println();
-
-        }
-    }*/
 }
