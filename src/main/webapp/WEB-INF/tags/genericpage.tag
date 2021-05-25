@@ -29,9 +29,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="${pageContext.request.contextPath}/fc/orderpage">Bestilling</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="${pageContext.request.contextPath}/fc/loginpage">Profil</a>
-                </li>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="${pageContext.request.contextPath}/fc/loginpage">Profil</a>--%>
+<%--                </li>--%>
             </ul>
             <div>
 

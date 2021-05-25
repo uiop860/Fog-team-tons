@@ -39,21 +39,21 @@ public class FinishCommand extends Command
         int phone;
         String email;
 
-        /*try{*/
+        try{
         carportWidthID = Integer.parseInt(request.getParameter("width"));
         carportLengthID = Integer.parseInt(request.getParameter("length"));
         name = request.getParameter("name");
         road = request.getParameter("road");
-        houseNumber = 1; //Integer.parseInt(request.getParameter("housenumber"));
-        zipCode = 1;// Integer.parseInt(request.getParameter("zipcode"));
+        houseNumber = Integer.parseInt(request.getParameter("housenumber"));
+        zipCode = Integer.parseInt(request.getParameter("zipcode"));
         city = request.getParameter("city");
-        phone = 1; //Integer.parseInt(request.getParameter("phone"));
+        phone = Integer.parseInt(request.getParameter("phone"));
         email = request.getParameter("email");
 
-        /*} catch (NumberFormatException e){
+        } catch (NumberFormatException e){
             request.setAttribute("error","Du har udfyldt forkert");
             return "orderpage";
-        }*/
+        }
 
         Request userRequest = new Request(carportWidthID, carportLengthID, name, road, houseNumber, zipCode, city, phone, email);
 
