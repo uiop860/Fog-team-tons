@@ -17,7 +17,7 @@
             <div class="row">
                 <div class="col-sm-4"></div>
                 <div class="col-sm-2 pt-3 pb-3 ">
-                    <button class="noprint btn btn-primary" onclick="window.print()">Print eller gem side</button>
+                    <button class="noprint btn btn-primary" onclick="window.print()">Print tilbud</button>
                 </div>
                 <div class="col-sm-2 pt-3 pb-3 ">
                     <form action="${pageContext.request.contextPath}/fc/managefsp" method="post">
@@ -222,6 +222,22 @@
                     <li>Spade</li>
                     <li>Skiftenøgle</li>
                 </ul>
+            </div>
+            <div class="col-sm-6 row">
+                <div class="col-sm-3">
+                    <button class="noprint btn btn-primary" onclick="window.print()">Print tilbud</button>
+                </div>
+                <div class="col-sm-3">
+                    <form action="${pageContext.request.contextPath}/fc/managefsp" method="post">
+                        <button name="manageRequest" value="${requestScope.request.requestID}"
+                                class="noprint btn btn-primary">Gå tilbage
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+            <div class="col-sm-6">
+
             </div>
         </div>
         <div>
