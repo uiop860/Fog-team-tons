@@ -15,6 +15,7 @@ public class Material {
     private double totalPrice;
     private double spacing = 0;
     private int lastRoofPlateWidth = 0;
+    private double raftersAmount;
 
     public Material(int materialID, String name, String description, String unit, double price, String category) {
         this.name = name;
@@ -45,8 +46,30 @@ public class Material {
                 calculateBeamOnLongSide(carportLength);
                 break;
 
-            case 5: //materialID = 4 = beam on broadside
+            case 5: //materialID = 5 = beam on broadside
                 calculateBeamOnBroadSide(carportWidth);
+                break;
+
+            case 6: //materialID = 6 = fittings for the beams
+                calculateFittingsForBeams(carportWidth,carportLength);
+                break;
+
+            case 7: //materialID = 7 = for screws for fittings
+                amount=1;
+                addScrewsToOrder();
+                break;
+
+            case 8: //materialID = 8 = for screws for the roof
+                amount=1;
+                addScrewsToOrder();
+                break;
+
+            case 9: //materialID = 9 = firkantskiver til montering af rem
+                calculateSquareDiscs(carportLength);
+                break;
+
+            case 10: //materialID = 10 = Bræddebolt Til montering af rem på stolper
+                addScrewsToOrder();
                 break;
         }
     }
@@ -87,7 +110,7 @@ public class Material {
         double raftersSpacing = (carportLength/rafterSpacingAmount);
         spacing = raftersSpacing;
         length = (int)carportWidth;
-
+        raftersAmount = amount;
         totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
 
     }
@@ -117,6 +140,33 @@ public class Material {
         totalPrice = Double.parseDouble(new DecimalFormat("#.##").format((length*price)*amount));
     }
 
+    public void calculateFittingsForBeams(double carportWidth,double carportLength) {
+        calculateRafters(carportWidth,carportLength);
+        amount*=2;
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*raftersAmount));
+    }
+
+    public void addScrewsToOrder(){
+        amount = 1; //en pakke skruer a 200stk til hver ordre.
+
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*amount));
+    }
+
+    public void calculateSquareDiscs(double carportLength){
+        calculatePole(carportLength);
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*amount));
+    }
+
+    public void calculateBolts(double carportLength){
+            calculatePole(carportLength);
+            if(amount>4){
+                amount = 2;
+            } else {
+                amount= 1;
+            }
+        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*amount));
+    }
 
     /** getters and setters **/
 
