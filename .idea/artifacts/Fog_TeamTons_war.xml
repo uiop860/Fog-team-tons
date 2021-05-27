@@ -7,7 +7,7 @@
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="fog.war">
+    <root id="archive" name="Fog-TeamTons-fog.war">
       <element id="artifact" artifact-name="Fog-TeamTons:war exploded" />
     </root>
   </artifact>
