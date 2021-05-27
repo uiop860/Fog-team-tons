@@ -4,7 +4,7 @@
 
     <groupId>dat</groupId>
     <artifactId>Fog-TeamTons</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>fog</version>
     <packaging>war</packaging>
 
     <name>Fog-TeamTons</name>

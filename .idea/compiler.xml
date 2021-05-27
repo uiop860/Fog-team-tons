@@ -16,7 +16,7 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="FOG" options="-endorseddirs D:\Development\FOG\Fog-team-tons\target/endorsed" />
-      <module name="Fog-TeamTons" options="-endorseddirs C:\Users\olive\Documents\GitHub\Fog-team-tons\target/endorsed" />
+      <module name="Fog-TeamTons" options="-endorseddirs D:\Development\FOG\Fog-team-tons\target/endorsed" />
     </option>
   </component>
 </project>
