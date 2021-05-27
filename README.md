@@ -1,5 +1,5 @@
-#FOG Hjemmeside Projekt
+# FOG Hjemmeside Projekt
 
-#diverse modeler og billeder ligger i Afleverings filer
+# Diverse modeler og billeder ligger i Afleverings filer
 
-Link til hjemmesiden: http://206.81.26.54:8080/fog/
+# Link til hjemmesiden: http://206.81.26.54:8080/fog/
