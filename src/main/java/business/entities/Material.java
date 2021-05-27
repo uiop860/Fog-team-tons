@@ -26,7 +26,6 @@ public class Material {
         this.category = category;
     }
 
-
     public void calculateAmountAndPrice(double carportWidth, double carportLength){
 
         switch (materialID){
@@ -155,16 +154,6 @@ public class Material {
 
     public void calculateSquareDiscs(double carportLength){
         calculatePole(carportLength);
-        totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*amount));
-    }
-
-    public void calculateBolts(double carportLength){
-            calculatePole(carportLength);
-            if(amount>4){
-                amount = 2;
-            } else {
-                amount= 1;
-            }
         totalPrice = Double.parseDouble(new DecimalFormat("#.##").format(price*amount));
     }
 

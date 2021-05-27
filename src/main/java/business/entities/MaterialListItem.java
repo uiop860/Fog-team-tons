@@ -15,6 +15,8 @@ public class MaterialListItem
         this.description = description;
     }
 
+    /** getters and setters **/
+
 
     public int getAmount()
     {

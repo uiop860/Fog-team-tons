@@ -155,8 +155,6 @@ public class RequestMapper {
             } catch (SQLException ex){
                 throw new UserException(ex.getMessage());
             }
-
-
         return null;
     }
 

@@ -15,10 +15,4 @@ public class AddressFacade
         this.addressMapper = new AddressMapper(database);
     }
 
-    public Address createAddress(Address address, String email) throws UserException
-    {
-
-        addressMapper.createAddress(address, email);
-        return address;
-    }
 }

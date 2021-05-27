@@ -22,10 +22,7 @@ public class Address
     }
 
 
-    /**
-     * getters and setters
-     **/
-
+    /** getters and setters **/
 
     public int getPhone()
     {

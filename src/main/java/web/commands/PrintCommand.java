@@ -44,7 +44,6 @@ public class PrintCommand extends CommandProtectedPage
         List<MaterialListItem> materialList = requestFacade.getMaterialList(id);
         request.setAttribute("materialList", materialList);
 
-
         return pageToShow;
     }
 }

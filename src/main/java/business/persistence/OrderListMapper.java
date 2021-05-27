@@ -42,7 +42,7 @@ public class OrderListMapper {
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
 
-                ps.setDouble(1,orderList.getTotalPriceOfCarport()); //TODO: gør så prisen ikke har mere end 2 decimaler
+                ps.setDouble(1,orderList.getTotalPriceOfCarport());
                 ps.setInt(2,requestID);
                 ps.executeUpdate();
 
@@ -69,7 +69,7 @@ public class OrderListMapper {
                     ps.setInt(1, requestID);
                     ps.setInt(2,i.getMaterialID());
                     ps.setInt(3,i.getAmount());
-                    ps.setDouble(4,i.getTotalPrice()); //TODO: gør så prisen ikke har mere end 2 decimaler
+                    ps.setDouble(4,i.getTotalPrice());
                     ps.executeUpdate();
 
                 } catch (SQLException ex) {
@@ -117,8 +117,6 @@ public class OrderListMapper {
             throw new UserException(ex.getMessage());
         }
     }
-
-
 }
 
 

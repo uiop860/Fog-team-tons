@@ -59,6 +59,4 @@ public class RequestFacade {
         List<Material> drawingList = requestMapper.getDrawingfromDB(requestID);
         return drawingList;
     }
-
-
 }

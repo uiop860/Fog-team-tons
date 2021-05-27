@@ -31,23 +31,11 @@ public class RegisterCommand extends CommandUnprotectedPage
         String password1 = request.getParameter("password1");
         String password2 = request.getParameter("password2");
 
-
-        /*String name = request.getParameter("name");
-        int phone = Integer.parseInt(request.getParameter("phone"));
-        String road = request.getParameter("road");
-        int house = Integer.parseInt(request.getParameter("house"));
-        String city = request.getParameter("city");
-        int zipcode = Integer.parseInt(request.getParameter("zipcode"));*/
-
-
-
         if (password1.equals(password2))
         {
 
 
             User user = userFacade.createUser(email, password1);
-            /*Address address = new Address(road, house, city, zipcode, phone, name);
-            addressFacade.createAddress(address, email);*/
 
             HttpSession session = request.getSession();
 
@@ -61,7 +49,5 @@ public class RegisterCommand extends CommandUnprotectedPage
             request.setAttribute("error", "the two passwords did not match");
             return "registerpage";
         }
-
     }
-
 }
