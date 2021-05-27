@@ -12,12 +12,10 @@ import java.util.List;
 public class AdminCommand extends CommandProtectedPage
 {
     RequestFacade requestFacade;
-    /*FspFacade fspFacade;*/
 
     public AdminCommand(String pageToShow, String role)
     {
         super(pageToShow, role);
-        /*this.fspFacade = new FspFacade(database);*/
         this.requestFacade = new RequestFacade(database);
     }
 
@@ -33,17 +31,6 @@ public class AdminCommand extends CommandProtectedPage
         } catch (UserException e){
             e.printStackTrace();
         }
-
-
-       /* try
-        {
-            List<Fsp> fspList = fspFacade.getfsp();
-
-            request.setAttribute("fspList", fspList);
-        } catch (UserException e)
-        {
-            e.printStackTrace();
-        }*/
 
         return pageToShow;
     }

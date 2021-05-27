@@ -53,5 +53,4 @@ public class TakeFSPCommand extends CommandProtectedPage
         request.setAttribute("materialList", materialList);
         return pageToShow;
     }
-
 }

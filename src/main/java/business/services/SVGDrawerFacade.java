@@ -21,9 +21,6 @@ public class SVGDrawerFacade {
 
     public SVG drawSVGCarport(){
 
-
-
-        //TODO: MÅL, Sidste 3 markers
         SVG svg = new SVG(0, 0, "0 0 " + (carportLength+55) +" " + (carportWidth+55) , 100, 100);
         //Initiate end of line markers
         svg.initiateMarkers();

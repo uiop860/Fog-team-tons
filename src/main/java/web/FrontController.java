@@ -52,7 +52,6 @@ public class FrontController extends HttpServlet
         } catch (UserException e){
             Logger.getLogger("web").log(Level.SEVERE, e.getMessage(), e);
         }
-
     }
 
     protected void processRequest(

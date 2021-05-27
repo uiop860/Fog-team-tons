@@ -9,10 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 public abstract class Command
 {
-    //Return a token string from the execute method to make a client side redirect,
-    // instead of a server side (forward) redirect
+
     public final static String REDIRECT_INDICATOR = "#*redirect*#_###_";
-    public final static String WAS_NOT_FOUND_COMMAND ="404_NOT_FOUND";
 
     private static HashMap<String, Command> commands;
     public static Database database;
@@ -57,5 +55,4 @@ public abstract class Command
             HttpServletRequest request,
             HttpServletResponse response)
             throws UserException;
-
 }

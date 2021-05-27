@@ -7,7 +7,6 @@ public class OrderList {
     private List<Material> materialList;
     private double totalPriceOfCarport;
 
-
     public OrderList(List<Material> materialList) {
         this.materialList = materialList;
     }
@@ -18,9 +17,6 @@ public class OrderList {
             totalPriceOfCarport += i.getTotalPrice();
         }
     }
-
-
-
 
     /** getters and setters **/
 

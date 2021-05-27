@@ -109,11 +109,10 @@ public class SVG
         svg.append(String.format(horizontalText, x, y, length));
     }
 
-    public void addHorizontalTextSmall(double x, double y, int length){
-        svg.append(String.format(horizontalTextSmall,x,y,length));
+    public void addHorizontalTextSmall(double x, double y, int length) {
+        svg.append(String.format(horizontalTextSmall, x, y, length));
 
     }
-
 
     public void addSvg(SVG innerSVG)
     {

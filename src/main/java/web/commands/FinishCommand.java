@@ -1,10 +1,8 @@
 package web.commands;
 
-import business.entities.Material;
 import business.entities.OrderList;
 import business.entities.Request;
 import business.exceptions.UserException;
-import business.persistence.OrderListMapper;
 import business.services.OrderListFacade;
 import business.services.RequestFacade;
 import business.services.SVG;
@@ -14,7 +12,6 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class FinishCommand extends Command
@@ -94,15 +91,8 @@ public class FinishCommand extends Command
         SVG svg = svgDrawerFacade.drawSVGCarport();
         SVG sideSVG = svgDrawerFacade.drawSideSVG();
 
-
-
         request.setAttribute("sideSVG", sideSVG.toString());
         request.setAttribute("svg", svg.toString());
-
-
-
-
-
 
         return pageToShow;
     }

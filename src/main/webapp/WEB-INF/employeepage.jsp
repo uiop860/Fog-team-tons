@@ -97,7 +97,6 @@
                         </table>
                     </div>
                 </div>
-<%--                <button class="btn btn-primary text-light">Tag forespørgsel</button>--%>
             </section>
         </div>
 

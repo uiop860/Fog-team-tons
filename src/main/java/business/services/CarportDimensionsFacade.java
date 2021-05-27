@@ -19,7 +19,6 @@ public class CarportDimensionsFacade {
 
         hashMap = carportDimensionsMapper.getCarportLengthFromDB();
 
-
         return hashMap;
     }
 
@@ -27,8 +26,6 @@ public class CarportDimensionsFacade {
         HashMap<Integer,Integer> hashMap;
         hashMap = carportDimensionsMapper.getCarportWidthFromDB();
 
-
         return hashMap;
     }
-
 }

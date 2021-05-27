@@ -43,8 +43,6 @@ public class Request {
 
     /** getters and setters **/
 
-
-
     public int getCarportWidth() {
         return carportWidth;
     }
